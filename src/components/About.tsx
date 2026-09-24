@@ -51,7 +51,7 @@ export function About() {
                 fill
                 sizes="(max-width: 1024px) 100vw, 58vw"
                 quality={92}
-                className="object-cover object-[center_20%]"
+                className="object-cover object-top"
                 priority
               />
             </motion.div>
