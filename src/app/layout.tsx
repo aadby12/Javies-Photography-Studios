@@ -24,34 +24,31 @@ const sans = Outfit({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} | Photography Studio Accra`,
+    default: "Javies Photography Studio | Photography in Accra, Ghana",
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
   keywords: [
-    "Javies Photography Studios",
+    "Javies Photography Studio",
     "Photography Studio Accra",
     "Photographer Accra",
-    "Family Photography Accra",
-    "Kids Photography Accra",
     "Maternity Photography Accra",
+    "Newborn Photography Accra",
+    "Kids Photography Accra",
+    "Family Photography Accra",
     "Portrait Photography Accra",
-    "Event Photography Accra",
-    "Videography Accra",
-    "Drone Photography Accra",
   ],
   authors: [{ name: siteConfig.name }],
-  creator: siteConfig.name,
   openGraph: {
     type: "website",
     locale: "en_GH",
     url: siteConfig.url,
     siteName: siteConfig.name,
-    title: `${siteConfig.name} | ${siteConfig.tagline}`,
+    title: "Javies Photography Studio | Photography in Accra, Ghana",
     description: siteConfig.description,
     images: [
       {
-        url: "https://images.unsplash.com/photo-1511895426328-dc8714191300?w=1200&q=80",
+        url: "/images/hero-family.jpg",
         width: 1200,
         height: 630,
         alt: siteConfig.name,
@@ -60,16 +57,11 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.name} | ${siteConfig.tagline}`,
+    title: "Javies Photography Studio | Photography in Accra, Ghana",
     description: siteConfig.description,
   },
-  robots: {
-    index: true,
-    follow: true,
-  },
-  alternates: {
-    canonical: siteConfig.url,
-  },
+  robots: { index: true, follow: true },
+  alternates: { canonical: siteConfig.url },
 };
 
 export default function RootLayout({

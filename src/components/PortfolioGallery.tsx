@@ -5,14 +5,14 @@ import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import {
-  portfolioCategories,
-  portfolioItems,
-  type PortfolioCategory,
-  type PortfolioItem,
+  galleryCategories,
+  galleryItems,
+  type GalleryCategory,
+  type GalleryItem,
 } from "@/lib/site-data";
 import { SectionHeading } from "@/components/SectionHeading";
 
-const aspectClass: Record<PortfolioItem["aspect"], string> = {
+const aspectClass: Record<GalleryItem["aspect"], string> = {
   portrait: "aspect-[3/4]",
   landscape: "aspect-[4/3]",
   square: "aspect-square",
@@ -20,33 +20,24 @@ const aspectClass: Record<PortfolioItem["aspect"], string> = {
 };
 
 type GalleryProps = {
-  id?: string;
-  title?: string;
-  eyebrow?: string;
-  description?: string;
+  showHeading?: boolean;
   limit?: number;
 };
 
-export function PortfolioGallery({
-  id = "portfolio",
-  title = "A body of work that speaks",
-  eyebrow = "Portfolio",
-  description = "An editorial collection of sessions across children, family, maternity, events, corporate, and more — the visual heart of Javies Studios.",
-  limit,
-}: GalleryProps) {
-  const [active, setActive] = useState<PortfolioCategory>("all");
+export function PortfolioGallery({ showHeading = true, limit }: GalleryProps) {
+  const [active, setActive] = useState<GalleryCategory>("all");
   const [viewerIndex, setViewerIndex] = useState<number | null>(null);
   const touchStartX = useRef<number | null>(null);
 
   const filtered = useMemo(() => {
     const items =
       active === "all"
-        ? portfolioItems
-        : portfolioItems.filter((item) => item.category === active);
+        ? galleryItems
+        : galleryItems.filter((item) => item.category === active);
     return typeof limit === "number" ? items.slice(0, limit) : items;
   }, [active, limit]);
 
-  const openViewer = (item: PortfolioItem) => {
+  const openViewer = (item: GalleryItem) => {
     const index = filtered.findIndex((f) => f.id === item.id);
     setViewerIndex(index >= 0 ? index : 0);
   };
@@ -81,12 +72,18 @@ export function PortfolioGallery({
   const current = viewerIndex !== null ? filtered[viewerIndex] : null;
 
   return (
-    <section id={id} className="scroll-mt-20 bg-warm-cream py-20 md:py-28 lg:py-32">
+    <section className="bg-warm-cream pb-20 md:pb-28">
       <div className="mx-auto max-w-7xl px-5 md:px-8 lg:px-10">
-        <SectionHeading eyebrow={eyebrow} title={title} description={description} />
+        {showHeading && (
+          <SectionHeading eyebrow="Gallery" title="Our work" />
+        )}
 
-        <div className="mt-10 flex gap-2 overflow-x-auto pb-2 scrollbar-thin sm:flex-wrap sm:overflow-visible">
-          {portfolioCategories.map((cat) => (
+        <div
+          className={`flex gap-2 overflow-x-auto pb-2 scrollbar-thin sm:flex-wrap sm:overflow-visible ${
+            showHeading ? "mt-10" : ""
+          }`}
+        >
+          {galleryCategories.map((cat) => (
             <button
               key={cat.id}
               type="button"
@@ -126,9 +123,8 @@ export function PortfolioGallery({
                   />
                   <div className="absolute inset-0 bg-ink/0 transition-colors duration-400 group-hover:bg-ink/25" />
                   <div className="absolute inset-x-0 bottom-0 translate-y-2 p-4 opacity-0 transition-all duration-400 group-hover:translate-y-0 group-hover:opacity-100">
-                    <p className="font-display text-lg text-warm-white">{item.caption}</p>
-                    <p className="mt-0.5 font-sans text-[10px] uppercase tracking-[0.16em] text-warm-beige/80">
-                      {item.category}
+                    <p className="font-sans text-[10px] uppercase tracking-[0.16em] text-warm-beige/90">
+                      {item.caption}
                     </p>
                   </div>
                 </div>
@@ -162,7 +158,7 @@ export function PortfolioGallery({
               </p>
               <button
                 type="button"
-                aria-label="Close viewer"
+                aria-label="Close"
                 onClick={closeViewer}
                 className="rounded-sm p-2 text-warm-white/80 transition-colors hover:text-warm-white"
               >
@@ -173,9 +169,9 @@ export function PortfolioGallery({
             <div className="relative flex flex-1 items-center justify-center px-4 pb-8 md:px-16">
               <button
                 type="button"
-                aria-label="Previous image"
+                aria-label="Previous"
                 onClick={goPrev}
-                className="absolute left-2 z-10 hidden rounded-sm p-2 text-warm-white/70 transition-colors hover:text-warm-white md:left-6 md:block"
+                className="absolute left-2 z-10 rounded-sm p-2 text-warm-white/70 transition-colors hover:text-warm-white md:left-6"
               >
                 <ChevronLeft size={36} />
               </button>
@@ -200,20 +196,17 @@ export function PortfolioGallery({
 
               <button
                 type="button"
-                aria-label="Next image"
+                aria-label="Next"
                 onClick={goNext}
-                className="absolute right-2 z-10 hidden rounded-sm p-2 text-warm-white/70 transition-colors hover:text-warm-white md:right-6 md:block"
+                className="absolute right-2 z-10 rounded-sm p-2 text-warm-white/70 transition-colors hover:text-warm-white md:right-6"
               >
                 <ChevronRight size={36} />
               </button>
             </div>
 
             <div className="px-6 pb-8 text-center md:pb-10">
-              <p className="font-display text-xl text-warm-white md:text-2xl">
+              <p className="font-sans text-[11px] uppercase tracking-[0.18em] text-warm-beige/60">
                 {current.caption}
-              </p>
-              <p className="mt-1 font-sans text-[11px] uppercase tracking-[0.18em] text-warm-beige/60">
-                {current.category} · Swipe or use arrows
               </p>
             </div>
           </motion.div>

@@ -1,9 +1,6 @@
-# Javies Photography Studios
+# Javies Photography Studio
 
-Premium website redesign concept for **Javies Photography Studios** — a professional photography and videography studio in Accra, Ghana.
-
-**Positioning:** Premium Website Redesign + Portfolio + Booking Experience  
-**Crafted by:** Avenor Tech
+Official website for **Javies Photography Studio** — Accra, Ghana.
 
 ## Stack
 
@@ -11,34 +8,34 @@ Premium website redesign concept for **Javies Photography Studios** — a profes
 - TypeScript
 - Tailwind CSS
 - Framer Motion
-- Lucide React
 - next/image
 
-## Getting started
+## Pages
+
+- `/` — Home (hero, featured work, services preview, booking)
+- `/services` — Services & packages
+- `/gallery` — Photo gallery
+- `/about` — About
+
+## Development
 
 ```bash
 npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
-
-## Production build
+## Production
 
 ```bash
 npm run build
 npm start
 ```
 
-## Customization
-
-- Brand copy, services, portfolio, and placeholders: `src/lib/site-data.ts`
-- Replace Unsplash demo imagery with Javies' real portfolio assets
-- Connect booking: `submitBookingRequest` in `src/components/BookingExperience.tsx`
-- Replace testimonial placeholders with real client quotes only
-
-## Contact (verified)
+## Client details
 
 - Instagram: [@javiesphotography_studios](https://www.instagram.com/javiesphotography_studios/)
 - Phone: 0245103261
 - Location: C&G House, Dome Road, Westlands, Accra
+
+Photography assets live in `public/images/` (client-supplied work only).
+Package prices in `src/lib/site-data.ts` are editable placeholders until confirmed by the client.
