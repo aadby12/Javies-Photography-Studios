@@ -50,7 +50,7 @@ export function About() {
                 alt={aboutContent.imageAlt}
                 fill
                 sizes="(max-width: 1024px) 100vw, 58vw"
-                quality={90}
+                quality={92}
                 className="object-cover object-[center_20%]"
                 priority
               />
