@@ -135,7 +135,8 @@ export function PortfolioGallery({ showHeading = true, limit }: GalleryProps) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[60] flex flex-col bg-ink/96"
+            className="fixed inset-0 z-[60] flex flex-col"
+            style={{ backgroundColor: "rgba(26, 22, 20, 0.97)" }}
             onTouchStart={(e) => {
               touchStartX.current = e.touches[0]?.clientX ?? null;
             }}
@@ -161,7 +162,7 @@ export function PortfolioGallery({ showHeading = true, limit }: GalleryProps) {
               </button>
             </div>
 
-            <div className="relative flex min-h-0 flex-1 items-center justify-center px-3 pb-3 md:px-14">
+            <div className="relative flex min-h-0 flex-1 items-center justify-center overflow-hidden px-3 pb-3 md:px-14">
               <button
                 type="button"
                 aria-label="Previous"
@@ -177,14 +178,14 @@ export function PortfolioGallery({ showHeading = true, limit }: GalleryProps) {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.25 }}
-                className="flex h-full w-full items-center justify-center"
+                className="flex h-full max-h-full w-full items-center justify-center"
               >
                 {/* Native img = exact file, full frame, no optimizer crop */}
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={current.src}
                   alt={current.alt}
-                  className="max-h-[calc(100svh-7.5rem)] max-w-full object-contain"
+                  className="h-auto w-auto max-h-[calc(100svh-7.5rem)] max-w-[min(100%,92vw)] object-contain"
                   draggable={false}
                 />
               </motion.div>
