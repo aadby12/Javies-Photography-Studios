@@ -9,15 +9,8 @@ import {
   galleryItems,
   type GalleryCategory,
   type GalleryItem,
-} from "@/lib/site-data";
+} from "@/lib/gallery-data";
 import { SectionHeading } from "@/components/SectionHeading";
-
-const aspectClass: Record<GalleryItem["aspect"], string> = {
-  portrait: "aspect-[3/4]",
-  landscape: "aspect-[4/3]",
-  square: "aspect-square",
-  wide: "aspect-[16/10]",
-};
 
 type GalleryProps = {
   showHeading?: boolean;
@@ -74,9 +67,7 @@ export function PortfolioGallery({ showHeading = true, limit }: GalleryProps) {
   return (
     <section className="bg-warm-cream pb-20 md:pb-28">
       <div className="mx-auto max-w-7xl px-5 md:px-8 lg:px-10">
-        {showHeading && (
-          <SectionHeading eyebrow="Gallery" title="Our work" />
-        )}
+        {showHeading && <SectionHeading eyebrow="Gallery" title="Our work" />}
 
         <div
           className={`flex gap-2 overflow-x-auto pb-2 scrollbar-thin sm:flex-wrap sm:overflow-visible ${
@@ -99,35 +90,38 @@ export function PortfolioGallery({ showHeading = true, limit }: GalleryProps) {
           ))}
         </div>
 
-        <div className="masonry-grid mt-10">
+        {/* Natural-aspect masonry — no forced crops */}
+        <div className="mt-10 columns-1 gap-3 sm:columns-2 sm:gap-4 lg:columns-3 lg:gap-5">
           <AnimatePresence mode="popLayout">
             {filtered.map((item) => (
               <motion.button
                 key={item.id}
                 type="button"
                 layout
-                initial={{ opacity: 0, scale: 0.96 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.96 }}
-                transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
                 onClick={() => openViewer(item)}
-                className="masonry-item group relative w-full overflow-hidden rounded-sm text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                className="mb-3 w-full break-inside-avoid overflow-hidden rounded-sm text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-accent sm:mb-4 lg:mb-5"
               >
-                <div className={`relative w-full ${aspectClass[item.aspect]}`}>
+                <span className="group relative block overflow-hidden">
                   <Image
                     src={item.src}
                     alt={item.alt}
-                    fill
+                    width={item.width}
+                    height={item.height}
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover transition-transform duration-700 ease-premium group-hover:scale-[1.04]"
+                    quality={85}
+                    className="h-auto w-full transition-transform duration-700 ease-premium group-hover:scale-[1.02]"
                   />
-                  <div className="absolute inset-0 bg-ink/0 transition-colors duration-400 group-hover:bg-ink/25" />
-                  <div className="absolute inset-x-0 bottom-0 translate-y-2 p-4 opacity-0 transition-all duration-400 group-hover:translate-y-0 group-hover:opacity-100">
-                    <p className="font-sans text-[10px] uppercase tracking-[0.16em] text-warm-beige/90">
+                  <span className="pointer-events-none absolute inset-0 bg-ink/0 transition-colors duration-400 group-hover:bg-ink/20" />
+                  <span className="pointer-events-none absolute inset-x-0 bottom-0 p-3 opacity-0 transition-opacity duration-400 group-hover:opacity-100">
+                    <span className="font-sans text-[10px] uppercase tracking-[0.16em] text-warm-white drop-shadow">
                       {item.caption}
-                    </p>
-                  </div>
-                </div>
+                    </span>
+                  </span>
+                </span>
               </motion.button>
             ))}
           </AnimatePresence>
@@ -166,7 +160,7 @@ export function PortfolioGallery({ showHeading = true, limit }: GalleryProps) {
               </button>
             </div>
 
-            <div className="relative flex flex-1 items-center justify-center px-4 pb-8 md:px-16">
+            <div className="relative flex min-h-0 flex-1 items-center justify-center px-4 pb-6 md:px-16">
               <button
                 type="button"
                 aria-label="Previous"
@@ -178,19 +172,21 @@ export function PortfolioGallery({ showHeading = true, limit }: GalleryProps) {
 
               <motion.div
                 key={current.id}
-                initial={{ opacity: 0, scale: 0.98 }}
-                animate={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-                className="relative h-full max-h-[75vh] w-full max-w-5xl"
+                transition={{ duration: 0.3 }}
+                className="relative flex h-full max-h-[78vh] w-full max-w-6xl items-center justify-center"
               >
                 <Image
                   src={current.src}
                   alt={current.alt}
-                  fill
+                  width={current.width}
+                  height={current.height}
                   sizes="100vw"
-                  className="object-contain"
+                  quality={92}
                   priority
+                  className="max-h-[78vh] w-auto max-w-full object-contain"
                 />
               </motion.div>
 

@@ -16,19 +16,13 @@ export type BookingPayload = {
   message: string;
 };
 
-async function submitBookingRequest(payload: BookingPayload): Promise<void> {
-  await new Promise((r) => setTimeout(r, 500));
-  if (process.env.NODE_ENV === "development") {
-    console.info("[Booking]", payload);
-  }
-}
-
 const inputClass =
   "w-full rounded-sm border border-warm-beige bg-warm-white px-4 py-3 font-sans text-sm text-ink outline-none transition-colors placeholder:text-ink-faint focus:border-accent";
 
 export function BookingExperience() {
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [form, setForm] = useState<BookingPayload>({
     name: "",
     phone: "",
@@ -38,6 +32,7 @@ export function BookingExperience() {
     preferredTime: "",
     message: "",
   });
+  const [honeypot, setHoneypot] = useState("");
 
   const whatsappUrl = `https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(
     `Hello Javies — I'd like to book a ${form.service || "session"}${
@@ -47,10 +42,27 @@ export function BookingExperience() {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+    setError(null);
     setSubmitting(true);
     try {
-      await submitBookingRequest(form);
+      const res = await fetch("/api/booking", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...form, website: honeypot }),
+      });
+      const data = (await res.json()) as { ok?: boolean; error?: string };
+      if (!res.ok || !data.ok) {
+        setError(
+          data.error ||
+            "Something went wrong while sending your request. Please try again or contact us directly on WhatsApp."
+        );
+        return;
+      }
       setSubmitted(true);
+    } catch {
+      setError(
+        "Something went wrong while sending your request. Please try again or contact us directly on WhatsApp."
+      );
     } finally {
       setSubmitting(false);
     }
@@ -99,7 +111,8 @@ export function BookingExperience() {
                   </div>
                   <h3 className="font-display text-3xl text-ink">Request sent</h3>
                   <p className="mx-auto mt-3 max-w-md font-sans text-sm text-ink-muted">
-                    Thank you, {form.name}. We&apos;ll be in touch shortly.
+                    Your session request has been sent. Javies Photography Studio will
+                    get back to you to confirm the details.
                   </p>
                   <a
                     href={whatsappUrl}
@@ -113,12 +126,26 @@ export function BookingExperience() {
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
+                  {/* Honeypot */}
+                  <div className="absolute -left-[9999px] opacity-0" aria-hidden="true">
+                    <label htmlFor="website">Website</label>
+                    <input
+                      id="website"
+                      type="text"
+                      tabIndex={-1}
+                      autoComplete="off"
+                      value={honeypot}
+                      onChange={(e) => setHoneypot(e.target.value)}
+                    />
+                  </div>
+
                   <div className="grid gap-4 sm:grid-cols-2">
                     <div>
                       <label className="mb-1.5 block font-sans text-xs text-ink-faint">Name</label>
                       <input
                         required
                         type="text"
+                        maxLength={120}
                         value={form.name}
                         onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
                         className={inputClass}
@@ -130,6 +157,7 @@ export function BookingExperience() {
                       <input
                         required
                         type="tel"
+                        maxLength={40}
                         value={form.phone}
                         onChange={(e) => setForm((f) => ({ ...f, phone: e.target.value }))}
                         className={inputClass}
@@ -141,6 +169,7 @@ export function BookingExperience() {
                       <input
                         required
                         type="email"
+                        maxLength={160}
                         value={form.email}
                         onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
                         className={inputClass}
@@ -198,6 +227,7 @@ export function BookingExperience() {
                       </label>
                       <textarea
                         rows={4}
+                        maxLength={2000}
                         value={form.message}
                         onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
                         className={`${inputClass} resize-none`}
@@ -205,6 +235,13 @@ export function BookingExperience() {
                       />
                     </div>
                   </div>
+
+                  {error && (
+                    <p className="font-sans text-sm text-red-700" role="alert">
+                      {error}
+                    </p>
+                  )}
+
                   <button
                     type="submit"
                     disabled={submitting}
