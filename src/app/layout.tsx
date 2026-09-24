@@ -74,7 +74,7 @@ export default function RootLayout({
       <body className="font-sans bg-warm-white text-ink antialiased">
         <JsonLd />
         <Header />
-        <main className="pb-20 md:pb-0">{children}</main>
+        <main className="pb-8 md:pb-0">{children}</main>
         <Footer />
         <MobileStickyCta />
       </body>

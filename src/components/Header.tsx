@@ -70,16 +70,6 @@ export function Header() {
           </nav>
 
           <div className="flex items-center gap-3">
-            <Link
-              href="/#booking"
-              className={`hidden rounded-sm px-5 py-2.5 font-sans text-[12px] font-semibold uppercase tracking-[0.14em] transition-all duration-300 md:inline-flex ${
-                solid
-                  ? "bg-ink text-warm-white hover:bg-ink-soft"
-                  : "bg-warm-white/95 text-ink hover:bg-warm-white"
-              }`}
-            >
-              Book a Session
-            </Link>
             <button
               type="button"
               aria-label={open ? "Close menu" : "Open menu"}
