@@ -43,14 +43,15 @@ export function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="relative aspect-[4/3] overflow-hidden rounded-sm sm:aspect-[16/10]"
+              className="relative aspect-[3/4] overflow-hidden rounded-sm sm:aspect-[4/5] lg:aspect-[3/4]"
             >
               <Image
                 src={aboutContent.image}
                 alt={aboutContent.imageAlt}
                 fill
                 sizes="(max-width: 1024px) 100vw, 58vw"
-                className="object-cover object-center"
+                quality={90}
+                className="object-cover object-[center_20%]"
                 priority
               />
             </motion.div>

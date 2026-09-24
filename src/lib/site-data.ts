@@ -50,35 +50,35 @@ export const services: {
     title: "Maternity",
     description: "Studio and outdoor maternity sessions.",
     image: "/images/service-maternity.jpg",
-    imageAlt: "Maternity studio session by Javies Photography Studio",
+    imageAlt: "Outdoor maternity session by Javies Photography Studio",
   },
   {
     id: "newborn",
     title: "Newborn",
     description: "Gentle newborn and baby sessions.",
     image: "/images/service-newborn.jpg",
-    imageAlt: "Newborn portrait by Javies Photography Studio",
+    imageAlt: "Newborn baby portrait by Javies Photography Studio",
   },
   {
     id: "milestone",
     title: "Milestone",
     description: "Birthday and kids milestone sessions.",
     image: "/images/service-milestone.jpg",
-    imageAlt: "Kids milestone session by Javies Photography Studio",
+    imageAlt: "Jungle-themed second birthday session by Javies Photography Studio",
   },
   {
     id: "family",
     title: "Family",
     description: "Family portraits in studio.",
     image: "/images/service-family.jpg",
-    imageAlt: "Family portrait by Javies Photography Studio",
+    imageAlt: "Kids studio session by Javies Photography Studio",
   },
   {
     id: "traditional",
     title: "Traditional",
     description: "Cultural and traditional attire sessions.",
     image: "/images/service-traditional.jpg",
-    imageAlt: "Traditional Ghanaian portrait by Javies Photography Studio",
+    imageAlt: "Traditional attire portrait by Javies Photography Studio",
   },
   {
     id: "portrait",
@@ -92,23 +92,71 @@ export const services: {
     title: "Christmas",
     description: "Festive seasonal family sessions.",
     image: "/images/service-christmas.jpg",
-    imageAlt: "Christmas family session by Javies Photography Studio",
+    imageAlt: "Christmas studio session by Javies Photography Studio",
   },
 ];
 
 export const featuredWork = [
-  { src: "/images/featured-traditional-kente.jpg", alt: "Mother and child in traditional kente", category: "Traditional" },
-  { src: "/images/featured-twins-kente.jpg", alt: "Twin girls in traditional attire", category: "Milestone" },
-  { src: "/images/featured-newborn.jpg", alt: "Sleeping newborn portrait", category: "Newborn" },
-  { src: "/images/featured-maternity-outdoor.jpg", alt: "Outdoor maternity portrait", category: "Maternity" },
-  { src: "/images/featured-princess.jpg", alt: "Girl in traditional kente and crown", category: "Traditional" },
-  { src: "/images/featured-family-candid.jpg", alt: "Family candid in studio", category: "Family" },
-  { src: "/images/featured-milestone-5.jpg", alt: "Fifth birthday studio session", category: "Milestone" },
-  { src: "/images/featured-twins-newborn.jpg", alt: "Newborn twins session", category: "Newborn" },
-  { src: "/images/featured-maternity-couple.jpg", alt: "Maternity couple portrait", category: "Maternity" },
-  { src: "/images/featured-christmas.jpg", alt: "Christmas family session", category: "Christmas" },
-  { src: "/images/hero-traditional.jpg", alt: "Traditional first birthday session", category: "Traditional" },
-  { src: "/images/featured-portrait-couple.jpg", alt: "Formal couple portrait", category: "Portrait" },
+  {
+    src: "/images/featured-traditional-kente.jpg",
+    alt: "Mother and child in traditional kente",
+    category: "Traditional",
+  },
+  {
+    src: "/images/featured-twins-kente.jpg",
+    alt: "Twin girls in traditional attire",
+    category: "Milestone",
+  },
+  {
+    src: "/images/featured-newborn.jpg",
+    alt: "Sleeping newborn portrait",
+    category: "Newborn",
+  },
+  {
+    src: "/images/featured-maternity-outdoor.jpg",
+    alt: "Outdoor maternity portrait",
+    category: "Maternity",
+  },
+  {
+    src: "/images/featured-princess.jpg",
+    alt: "Girl in traditional kente and crown",
+    category: "Traditional",
+  },
+  {
+    src: "/images/featured-milestone-5.jpg",
+    alt: "Fifth birthday studio session",
+    category: "Milestone",
+  },
+  {
+    src: "/images/featured-twins-newborn.jpg",
+    alt: "Newborn twins session",
+    category: "Newborn",
+  },
+  {
+    src: "/images/featured-milestone-baffour.jpg",
+    alt: "First birthday traditional milestone",
+    category: "Milestone",
+  },
+  {
+    src: "/images/featured-maternity-couple.jpg",
+    alt: "Maternity couple portrait",
+    category: "Maternity",
+  },
+  {
+    src: "/images/featured-traditional-jeslyn.jpg",
+    alt: "Traditional attire portrait",
+    category: "Traditional",
+  },
+  {
+    src: "/images/featured-newborn-naseda.jpg",
+    alt: "Styled baby studio portrait",
+    category: "Newborn",
+  },
+  {
+    src: "/images/featured-milestone-bedrich.jpg",
+    alt: "Kids birthday milestone session",
+    category: "Milestone",
+  },
 ];
 
 /** Package details — fill with client-verified pricing. Do not invent prices. */
@@ -195,7 +243,7 @@ export const aboutContent = {
   lead: "Javies Photography Studio is based in Accra, Ghana — creating portraits for families, maternity, newborns, milestones, and traditional sessions.",
   location: "C&G House, Dome Road, Westlands, Accra",
   image: "/images/about-studio.jpg",
-  imageAlt: "Family studio portrait by Javies Photography Studio",
+  imageAlt: "Traditional studio portrait by Javies Photography Studio",
 };
 
 export const heroImage = {
