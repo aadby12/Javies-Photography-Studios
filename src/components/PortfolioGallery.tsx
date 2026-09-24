@@ -90,7 +90,7 @@ export function PortfolioGallery({ showHeading = true, limit }: GalleryProps) {
           ))}
         </div>
 
-        {/* Natural-aspect masonry — no forced crops */}
+        {/* Masonry grid — natural aspect, no forced crops */}
         <div className="mt-10 columns-1 gap-3 sm:columns-2 sm:gap-4 lg:columns-3 lg:gap-5">
           <AnimatePresence mode="popLayout">
             {filtered.map((item) => (
@@ -103,9 +103,9 @@ export function PortfolioGallery({ showHeading = true, limit }: GalleryProps) {
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
                 onClick={() => openViewer(item)}
-                className="mb-3 w-full break-inside-avoid overflow-hidden rounded-sm text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-accent sm:mb-4 lg:mb-5"
+                className="mb-3 w-full break-inside-avoid text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-accent sm:mb-4 lg:mb-5"
               >
-                <span className="group relative block overflow-hidden">
+                <span className="group relative block overflow-hidden rounded-sm">
                   <Image
                     src={item.src}
                     alt={item.alt}
@@ -113,9 +113,9 @@ export function PortfolioGallery({ showHeading = true, limit }: GalleryProps) {
                     height={item.height}
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     quality={85}
-                    className="h-auto w-full transition-transform duration-700 ease-premium group-hover:scale-[1.02]"
+                    className="h-auto w-full"
                   />
-                  <span className="pointer-events-none absolute inset-0 bg-ink/0 transition-colors duration-400 group-hover:bg-ink/20" />
+                  <span className="pointer-events-none absolute inset-0 bg-ink/0 transition-colors duration-400 group-hover:bg-ink/15" />
                   <span className="pointer-events-none absolute inset-x-0 bottom-0 p-3 opacity-0 transition-opacity duration-400 group-hover:opacity-100">
                     <span className="font-sans text-[10px] uppercase tracking-[0.16em] text-warm-white drop-shadow">
                       {item.caption}
@@ -128,13 +128,14 @@ export function PortfolioGallery({ showHeading = true, limit }: GalleryProps) {
         </div>
       </div>
 
+      {/* Lightbox — full original photo, never cropped */}
       <AnimatePresence>
         {current && viewerIndex !== null && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[60] flex flex-col bg-ink/95"
+            className="fixed inset-0 z-[60] flex flex-col bg-ink/96"
             onTouchStart={(e) => {
               touchStartX.current = e.touches[0]?.clientX ?? null;
             }}
@@ -146,7 +147,7 @@ export function PortfolioGallery({ showHeading = true, limit }: GalleryProps) {
               touchStartX.current = null;
             }}
           >
-            <div className="flex items-center justify-between px-4 py-4 md:px-8">
+            <div className="flex shrink-0 items-center justify-between px-4 py-3 md:px-8">
               <p className="font-sans text-xs text-warm-beige/70">
                 {viewerIndex + 1} / {filtered.length}
               </p>
@@ -160,14 +161,14 @@ export function PortfolioGallery({ showHeading = true, limit }: GalleryProps) {
               </button>
             </div>
 
-            <div className="relative flex min-h-0 flex-1 items-center justify-center px-4 pb-6 md:px-16">
+            <div className="relative flex min-h-0 flex-1 items-center justify-center px-3 pb-3 md:px-14">
               <button
                 type="button"
                 aria-label="Previous"
                 onClick={goPrev}
-                className="absolute left-2 z-10 rounded-sm p-2 text-warm-white/70 transition-colors hover:text-warm-white md:left-6"
+                className="absolute left-1 z-10 rounded-sm p-2 text-warm-white/70 transition-colors hover:text-warm-white md:left-4"
               >
-                <ChevronLeft size={36} />
+                <ChevronLeft size={32} />
               </button>
 
               <motion.div
@@ -175,18 +176,16 @@ export function PortfolioGallery({ showHeading = true, limit }: GalleryProps) {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                transition={{ duration: 0.3 }}
-                className="relative flex h-full max-h-[78vh] w-full max-w-6xl items-center justify-center"
+                transition={{ duration: 0.25 }}
+                className="flex h-full w-full items-center justify-center"
               >
-                <Image
+                {/* Native img = exact file, full frame, no optimizer crop */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
                   src={current.src}
                   alt={current.alt}
-                  width={current.width}
-                  height={current.height}
-                  sizes="100vw"
-                  quality={92}
-                  priority
-                  className="max-h-[78vh] w-auto max-w-full object-contain"
+                  className="max-h-[calc(100svh-7.5rem)] max-w-full object-contain"
+                  draggable={false}
                 />
               </motion.div>
 
@@ -194,13 +193,13 @@ export function PortfolioGallery({ showHeading = true, limit }: GalleryProps) {
                 type="button"
                 aria-label="Next"
                 onClick={goNext}
-                className="absolute right-2 z-10 rounded-sm p-2 text-warm-white/70 transition-colors hover:text-warm-white md:right-6"
+                className="absolute right-1 z-10 rounded-sm p-2 text-warm-white/70 transition-colors hover:text-warm-white md:right-4"
               >
-                <ChevronRight size={36} />
+                <ChevronRight size={32} />
               </button>
             </div>
 
-            <div className="px-6 pb-8 text-center md:pb-10">
+            <div className="shrink-0 px-6 pb-5 text-center">
               <p className="font-sans text-[11px] uppercase tracking-[0.18em] text-warm-beige/60">
                 {current.caption}
               </p>
