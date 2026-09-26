@@ -1,5 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
-import { Instagram, MapPin, Phone } from "lucide-react";
+import { Instagram, Mail, MapPin, Phone } from "lucide-react";
 import { siteConfig, navLinks } from "@/lib/site-data";
 
 export function Footer() {
@@ -8,12 +9,21 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 lg:px-10 lg:py-20">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4 lg:gap-8">
           <div>
-            <Link href="/" className="font-display text-3xl font-semibold text-ink">
-              Javies
+            <Link href="/" className="inline-flex items-center gap-3">
+              <Image
+                src="/brand/logo-mark.png"
+                alt=""
+                width={44}
+                height={44}
+                className="h-11 w-11 object-contain"
+              />
+              <span>
+                <span className="block font-display text-3xl font-semibold text-ink">Javies</span>
+                <span className="mt-1 block font-sans text-[11px] uppercase tracking-[0.18em] text-ink-faint">
+                  Photography Studios
+                </span>
+              </span>
             </Link>
-            <p className="mt-2 font-sans text-[11px] uppercase tracking-[0.18em] text-ink-faint">
-              Photography Studio
-            </p>
             <p className="mt-3 font-sans text-sm text-ink-muted">Accra, Ghana</p>
           </div>
 
@@ -51,6 +61,15 @@ export function Footer() {
                 >
                   <Phone size={16} className="mt-0.5 shrink-0 text-accent-deep" />
                   {siteConfig.phone}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`mailto:${siteConfig.email}`}
+                  className="flex gap-2.5 text-sm text-ink-muted transition-colors hover:text-ink"
+                >
+                  <Mail size={16} className="mt-0.5 shrink-0 text-accent-deep" />
+                  {siteConfig.email}
                 </a>
               </li>
               <li>

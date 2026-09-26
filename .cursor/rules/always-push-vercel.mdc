@@ -1,0 +1,15 @@
+---
+description: Always deploy site changes to Vercel after finishing work
+alwaysApply: true
+---
+
+# Always push to Vercel
+
+When finishing website changes for this project:
+
+1. Commit the relevant changes (never commit `.env`, `.env.local`, or secrets).
+2. Push to `origin` (`git push`).
+3. Confirm the Vercel production deploy succeeds (GitHub integration usually auto-deploys on push to `main`).
+4. If auto-deploy is not linked, run `vercel --prod` (or `npx vercel --prod`) and report the live URL.
+
+Do this by default after meaningful site updates unless the user says not to deploy.

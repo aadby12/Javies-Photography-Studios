@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, Instagram } from "lucide-react";
@@ -38,20 +39,34 @@ export function Header() {
         }`}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8 lg:px-10">
-          <Link href="/" className="group relative z-10" onClick={() => setOpen(false)}>
-            <span
-              className={`font-display text-xl font-semibold tracking-wide transition-colors duration-300 md:text-2xl ${
-                solid ? "text-ink" : "text-warm-white"
-              }`}
-            >
-              Javies
-            </span>
-            <span
-              className={`ml-1.5 hidden font-sans text-[10px] uppercase tracking-[0.2em] sm:inline ${
-                solid ? "text-ink-faint" : "text-warm-white/70"
-              }`}
-            >
-              Studios
+          <Link
+            href="/"
+            className="group relative z-10 flex items-center gap-2.5"
+            onClick={() => setOpen(false)}
+          >
+            <Image
+              src="/brand/logo-mark.png"
+              alt=""
+              width={36}
+              height={36}
+              className="h-8 w-8 object-contain md:h-9 md:w-9"
+              priority
+            />
+            <span className="flex flex-col leading-none">
+              <span
+                className={`font-display text-xl font-semibold tracking-wide transition-colors duration-300 md:text-2xl ${
+                  solid ? "text-ink" : "text-warm-white"
+                }`}
+              >
+                Javies
+              </span>
+              <span
+                className={`mt-0.5 font-sans text-[9px] uppercase tracking-[0.22em] ${
+                  solid ? "text-ink-faint" : "text-warm-white/70"
+                }`}
+              >
+                Photography Studios
+              </span>
             </span>
           </Link>
 

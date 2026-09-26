@@ -23,9 +23,9 @@ const config: Config = {
           faint: "#8A8178",
         },
         accent: {
-          DEFAULT: "#C4A484",
-          soft: "#D4B896",
-          deep: "#A88968",
+          DEFAULT: "#D9943F",
+          soft: "#E5B06A",
+          deep: "#B87A2E",
         },
       },
       fontFamily: {

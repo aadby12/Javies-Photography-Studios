@@ -8,6 +8,7 @@ export function JsonLd() {
     description: siteConfig.description,
     url: siteConfig.url,
     telephone: siteConfig.phoneInternational,
+    email: siteConfig.email,
     image: `${siteConfig.url}/images/hero-family.jpg`,
     address: {
       "@type": "PostalAddress",

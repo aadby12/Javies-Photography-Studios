@@ -1,6 +1,6 @@
 "use client";
 
-import { Instagram, MessageCircle, Phone } from "lucide-react";
+import { Instagram, Mail, MessageCircle, Phone } from "lucide-react";
 import { siteConfig } from "@/lib/site-data";
 
 export function ContactCta() {
@@ -24,6 +24,13 @@ export function ContactCta() {
           >
             <Phone size={16} />
             {siteConfig.phone}
+          </a>
+          <a
+            href={`mailto:${siteConfig.email}`}
+            className="inline-flex items-center gap-2 rounded-sm border border-warm-white/30 px-5 py-3.5 font-sans text-[12px] font-semibold uppercase tracking-[0.12em] text-warm-white"
+          >
+            <Mail size={16} />
+            Email
           </a>
           <a
             href={whatsappUrl}

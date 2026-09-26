@@ -7,6 +7,7 @@ export const siteConfig = {
   phone: "0245103261",
   phoneInternational: "+233245103261",
   whatsapp: "233245103261",
+  email: "javiesstudios@gmail.com",
   address: {
     street: "C&G House, Dome Road, Westlands",
     city: "Accra",
@@ -247,7 +248,7 @@ export const aboutContent = {
 };
 
 export const heroImage = {
-  src: "/images/hero-traditional.jpg",
-  alt: "Traditional milestone studio session by Javies Photography Studio, Accra",
-  objectPosition: "center right",
+  src: "/images/hero-family.jpg",
+  alt: "Family studio session by Javies Photography Studio, Accra",
+  objectPosition: "center center",
 };

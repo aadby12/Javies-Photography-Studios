@@ -28,6 +28,12 @@ export function About() {
               </p>
               <p className="mt-6 font-sans text-sm text-ink-faint">{aboutContent.location}</p>
               <p className="mt-1 font-sans text-sm text-ink-faint">{siteConfig.phone}</p>
+              <a
+                href={`mailto:${siteConfig.email}`}
+                className="mt-1 block font-sans text-sm text-ink-faint transition-colors hover:text-ink"
+              >
+                {siteConfig.email}
+              </a>
               <Link
                 href="/#booking"
                 className="mt-8 inline-flex rounded-sm bg-ink px-7 py-3.5 font-sans text-[12px] font-semibold uppercase tracking-[0.14em] text-warm-white transition-colors hover:bg-ink-soft"
