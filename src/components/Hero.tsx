@@ -1,30 +1,65 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { ArrowDown } from "lucide-react";
-import { heroImage } from "@/lib/site-data";
+import { AnimatePresence, motion } from "framer-motion";
+import { ArrowDown, ChevronLeft, ChevronRight } from "lucide-react";
+import { heroSlides } from "@/lib/site-data";
+
+const SLIDE_MS = 6500;
 
 export function Hero() {
+  const [index, setIndex] = useState(0);
+  const [paused, setPaused] = useState(false);
+  const slide = heroSlides[index];
+
+  useEffect(() => {
+    if (paused) return;
+    const reduce =
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce) return;
+
+    const timer = window.setInterval(() => {
+      setIndex((current) => (current + 1) % heroSlides.length);
+    }, SLIDE_MS);
+    return () => window.clearInterval(timer);
+  }, [paused, index]);
+
+  const go = (next: number) => {
+    setIndex((next + heroSlides.length) % heroSlides.length);
+  };
+
   return (
-    <section className="relative h-[100svh] min-h-[640px] w-full overflow-hidden">
+    <section
+      className="relative h-[100svh] min-h-[640px] w-full overflow-hidden"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+      aria-roledescription="carousel"
+      aria-label="Photography services"
+    >
       <div className="absolute inset-0">
-        <motion.div
-          className="absolute inset-0 scale-105"
-          animate={{ scale: [1.05, 1.1, 1.05] }}
-          transition={{ duration: 22, ease: "easeInOut", repeat: Infinity }}
-        >
-          <Image
-            src={heroImage.src}
-            alt={heroImage.alt}
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover"
-            style={{ objectPosition: heroImage.objectPosition }}
-          />
-        </motion.div>
+        <AnimatePresence initial={false}>
+          <motion.div
+            key={slide.src}
+            className="absolute inset-0"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.05, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <Image
+              src={slide.src}
+              alt={slide.alt}
+              fill
+              priority={index === 0}
+              sizes="100vw"
+              className="object-cover"
+              style={{ objectPosition: slide.objectPosition }}
+            />
+          </motion.div>
+        </AnimatePresence>
         <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/40 to-ink/30" />
         <div className="absolute inset-0 bg-gradient-to-r from-ink/45 via-transparent to-transparent" />
       </div>
@@ -38,6 +73,21 @@ export function Hero() {
         >
           Accra, Ghana
         </motion.p>
+
+        <AnimatePresence mode="wait">
+          <motion.p
+            key={slide.id}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+            className="mb-3 font-sans text-[12px] font-semibold uppercase tracking-[0.22em] text-warm-white"
+          >
+            <Link href={`/gallery?category=${slide.id}`} className="hover:text-warm-beige">
+              {slide.category}
+            </Link>
+          </motion.p>
+        </AnimatePresence>
 
         <motion.h1
           initial={{ opacity: 0, y: 28 }}
@@ -64,13 +114,46 @@ export function Hero() {
             Book a Session
           </Link>
           <Link
-            href="/gallery"
+            href={`/gallery?category=${slide.id}`}
             className="inline-flex items-center justify-center rounded-sm border border-warm-white/40 bg-transparent px-7 py-3.5 font-sans text-[12px] font-semibold uppercase tracking-[0.14em] text-warm-white transition-all duration-300 hover:border-warm-white hover:bg-warm-white/10"
           >
-            View Gallery
+            View {slide.category}
           </Link>
         </motion.div>
+
+        <div className="mt-8 flex items-center gap-2" role="tablist" aria-label="Service slides">
+          {heroSlides.map((item, itemIndex) => (
+            <button
+              key={item.id}
+              type="button"
+              role="tab"
+              aria-selected={itemIndex === index}
+              aria-label={`Show ${item.category}`}
+              onClick={() => go(itemIndex)}
+              className={`h-1.5 rounded-full transition-all duration-300 ${
+                itemIndex === index ? "w-8 bg-warm-white" : "w-3 bg-warm-white/40 hover:bg-warm-white/70"
+              }`}
+            />
+          ))}
+        </div>
       </div>
+
+      <button
+        type="button"
+        aria-label="Previous category"
+        onClick={() => go(index - 1)}
+        className="absolute left-3 top-1/2 z-10 hidden -translate-y-1/2 rounded-sm p-2 text-warm-white/70 transition-colors hover:text-warm-white md:block"
+      >
+        <ChevronLeft size={28} />
+      </button>
+      <button
+        type="button"
+        aria-label="Next category"
+        onClick={() => go(index + 1)}
+        className="absolute right-3 top-1/2 z-10 hidden -translate-y-1/2 rounded-sm p-2 text-warm-white/70 transition-colors hover:text-warm-white md:block"
+      >
+        <ChevronRight size={28} />
+      </button>
 
       <a
         href="#featured"

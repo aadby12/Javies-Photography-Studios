@@ -247,8 +247,54 @@ export const aboutContent = {
   imageAlt: "Traditional studio portrait by Javies Photography Studio",
 };
 
-export const heroImage = {
-  src: "/images/hero-family.jpg",
-  alt: "Family studio session by Javies Photography Studio, Accra",
-  objectPosition: "center center",
-};
+export const heroSlides = [
+  {
+    id: "milestone",
+    category: "Milestone",
+    src: "/images/service-milestone.jpg",
+    alt: "Jungle-themed birthday milestone session by Javies Photography Studio",
+    objectPosition: "center 42%",
+  },
+  {
+    id: "family",
+    category: "Family",
+    src: "/images/hero-family.jpg",
+    alt: "Family studio session by Javies Photography Studio, Accra",
+    objectPosition: "center center",
+  },
+  {
+    id: "newborn",
+    category: "Newborn",
+    src: "/images/service-newborn.jpg",
+    alt: "Newborn baby portrait by Javies Photography Studio",
+    objectPosition: "center 30%",
+  },
+  {
+    id: "maternity",
+    category: "Maternity",
+    src: "/images/hero-maternity.jpg",
+    alt: "Maternity studio session by Javies Photography Studio",
+    objectPosition: "center center",
+  },
+  {
+    id: "portrait",
+    category: "Portrait",
+    src: "/images/service-portrait.jpg",
+    alt: "Couple portrait by Javies Photography Studio",
+    objectPosition: "center 28%",
+  },
+  {
+    id: "traditional",
+    category: "Traditional",
+    src: "/images/featured-traditional-kente.jpg",
+    alt: "Mother and child in traditional kente by Javies Photography Studio",
+    objectPosition: "center center",
+  },
+  {
+    id: "christmas",
+    category: "Christmas",
+    src: "/images/featured-christmas.jpg",
+    alt: "Christmas family session by Javies Photography Studio",
+    objectPosition: "center 45%",
+  },
+] as const;

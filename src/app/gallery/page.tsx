@@ -8,11 +8,17 @@ export const metadata: Metadata = {
     "Photography gallery — maternity, newborn, milestone, family and traditional sessions by Javies Photography Studio, Accra.",
 };
 
-export default function GalleryPage() {
+type GalleryPageProps = {
+  searchParams: Promise<{ category?: string }>;
+};
+
+export default async function GalleryPage({ searchParams }: GalleryPageProps) {
+  const { category } = await searchParams;
+
   return (
     <>
       <PageHero eyebrow="Gallery" title="Our work" />
-      <PortfolioGallery showHeading={false} />
+      <PortfolioGallery showHeading={false} initialCategory={category} />
     </>
   );
 }

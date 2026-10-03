@@ -15,17 +15,28 @@ import { SectionHeading } from "@/components/SectionHeading";
 type GalleryProps = {
   showHeading?: boolean;
   limit?: number;
+  initialCategory?: string;
 };
 
-export function PortfolioGallery({ showHeading = true, limit }: GalleryProps) {
-  const [active, setActive] = useState<GalleryCategory>("all");
+function isGalleryCategory(value: string | undefined): value is GalleryCategory {
+  return galleryCategories.some((category) => category.id === value);
+}
+
+export function PortfolioGallery({
+  showHeading = true,
+  limit,
+  initialCategory,
+}: GalleryProps) {
+  const [active, setActive] = useState<GalleryCategory>(
+    isGalleryCategory(initialCategory) ? initialCategory : "all"
+  );
   const [viewerIndex, setViewerIndex] = useState<number | null>(null);
   const touchStartX = useRef<number | null>(null);
 
   const filtered = useMemo(() => {
     const items =
       active === "all"
-        ? galleryItems
+        ? galleryItems.filter((item) => item.includeInAll)
         : galleryItems.filter((item) => item.category === active);
     return typeof limit === "number" ? items.slice(0, limit) : items;
   }, [active, limit]);
