@@ -1224,17 +1224,6 @@ export const galleryItems: GalleryItem[] = [
     "includeInAll": true
   },
   {
-    "id": "ae986a1e450a",
-    "src": "/images/gallery/family-jpsi0115-ae986a.jpg",
-    "alt": "family photography by Javies Photography Studio",
-    "caption": "Family",
-    "category": "family",
-    "width": 1920,
-    "height": 2400,
-    "ratio": 0.8,
-    "includeInAll": true
-  },
-  {
     "id": "88d861644ea2",
     "src": "/images/gallery/family-madison@1-(24)-88d861.jpg",
     "alt": "family photography by Javies Photography Studio",
@@ -1587,17 +1576,6 @@ export const galleryItems: GalleryItem[] = [
     "includeInAll": true
   },
   {
-    "id": "ab82f73ef3ee",
-    "src": "/images/gallery/maternity-javi0738-be1aa4.jpg",
-    "alt": "maternity photography by Javies Photography Studio",
-    "caption": "Maternity",
-    "category": "maternity",
-    "width": 632,
-    "height": 473,
-    "ratio": 1.3362,
-    "includeInAll": true
-  },
-  {
     "id": "b75fa77d04ae",
     "src": "/images/gallery/maternity-javi0779-6a07b1.jpg",
     "alt": "maternity photography by Javies Photography Studio",
@@ -1611,17 +1589,6 @@ export const galleryItems: GalleryItem[] = [
   {
     "id": "f7cbc4137c34",
     "src": "/images/gallery/maternity-javi0841-1d5834.jpg",
-    "alt": "maternity photography by Javies Photography Studio",
-    "caption": "Maternity",
-    "category": "maternity",
-    "width": 632,
-    "height": 473,
-    "ratio": 1.3362,
-    "includeInAll": true
-  },
-  {
-    "id": "6a2a5854542a",
-    "src": "/images/gallery/maternity-javi1392hd-a3ef97.jpg",
     "alt": "maternity photography by Javies Photography Studio",
     "caption": "Maternity",
     "category": "maternity",
@@ -1732,17 +1699,6 @@ export const galleryItems: GalleryItem[] = [
   {
     "id": "bbccce07fa29",
     "src": "/images/gallery/maternity-maternity-(17)-f2d00c.jpg",
-    "alt": "maternity photography by Javies Photography Studio",
-    "caption": "Maternity",
-    "category": "maternity",
-    "width": 632,
-    "height": 473,
-    "ratio": 1.3362,
-    "includeInAll": true
-  },
-  {
-    "id": "23452359b7f2",
-    "src": "/images/gallery/maternity-maternity-(19)-d53e6d.jpg",
     "alt": "maternity photography by Javies Photography Studio",
     "caption": "Maternity",
     "category": "maternity",

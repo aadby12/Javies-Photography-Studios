@@ -72,6 +72,14 @@ const SKIP_FILES = new Set([
   "milestone-sreyhan@3ms-(25)-ad5aa2.jpg",
   "newborn-sreyhan@3ms-(4)-34b3cd.jpg",
   "newborn-zaine@1-(10)-3ffc63.jpg",
+  "maternity-javi0738-be1aa4.jpg",
+  "maternity-javi1392hd-a3ef97.jpg",
+  "maternity-maternity-(19)-d53e6d.jpg",
+  "family-jpsi0115-ae986a.jpg",
+  "javi0738.jpg",
+  "javi1392hd.jpg",
+  "maternity (19).jpg",
+  "jpsi0115.jpg",
 ]);
 
 const CATEGORY_LABEL = {

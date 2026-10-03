@@ -77,14 +77,13 @@ export async function POST(request: Request) {
       process.env.BOOKING_FROM_EMAIL || "Javies Photography Studio <onboarding@resend.dev>";
 
     if (!apiKey || !javiesEmail) {
-      console.error("[booking] Missing RESEND_API_KEY or JAVIES_EMAIL");
       return NextResponse.json(
         {
           ok: false,
-          error:
-            "Something went wrong while sending your request. Please try again or contact us directly on WhatsApp.",
+          code: "unconfigured",
+          error: "Email delivery is not set up. Continue on WhatsApp.",
         },
-        { status: 500 }
+        { status: 503 }
       );
     }
 

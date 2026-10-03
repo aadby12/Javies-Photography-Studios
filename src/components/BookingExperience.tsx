@@ -19,9 +19,23 @@ export type BookingPayload = {
 const inputClass =
   "w-full rounded-sm border border-warm-beige bg-warm-white px-4 py-3 font-sans text-sm text-ink outline-none transition-colors placeholder:text-ink-faint focus:border-accent";
 
+function bookingMessage(form: BookingPayload) {
+  return [
+    "Hello Javies Photography Studio, I would like to book a session.",
+    "",
+    `Name: ${form.name}`,
+    `Phone: ${form.phone}`,
+    `Email: ${form.email}`,
+    `Service: ${form.service}`,
+    `Preferred date: ${form.preferredDate || "Not set"}`,
+    `Preferred time: ${form.preferredTime || "Not set"}`,
+    `Message: ${form.message || "—"}`,
+  ].join("\n");
+}
+
 export function BookingExperience() {
   const [submitting, setSubmitting] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
+  const [submitted, setSubmitted] = useState<"email" | "whatsapp" | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [form, setForm] = useState<BookingPayload>({
     name: "",
@@ -35,10 +49,12 @@ export function BookingExperience() {
   const [honeypot, setHoneypot] = useState("");
 
   const whatsappUrl = `https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(
-    `Hello Javies — I'd like to book a ${form.service || "session"}${
-      form.preferredDate ? ` on ${form.preferredDate}` : ""
-    }.`
+    bookingMessage(form)
   )}`;
+
+  const openWhatsApp = () => {
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+  };
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -50,19 +66,17 @@ export function BookingExperience() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...form, website: honeypot }),
       });
-      const data = (await res.json()) as { ok?: boolean; error?: string };
-      if (!res.ok || !data.ok) {
-        setError(
-          data.error ||
-            "Something went wrong while sending your request. Please try again or contact us directly on WhatsApp."
-        );
+      const data = (await res.json()) as { ok?: boolean; error?: string; code?: string };
+      if (res.ok && data.ok) {
+        setSubmitted("email");
         return;
       }
-      setSubmitted(true);
+
+      openWhatsApp();
+      setSubmitted("whatsapp");
     } catch {
-      setError(
-        "Something went wrong while sending your request. Please try again or contact us directly on WhatsApp."
-      );
+      openWhatsApp();
+      setSubmitted("whatsapp");
     } finally {
       setSubmitting(false);
     }
@@ -109,10 +123,13 @@ export function BookingExperience() {
                   <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-warm-cream">
                     <Check className="text-accent-deep" size={28} />
                   </div>
-                  <h3 className="font-display text-3xl text-ink">Request sent</h3>
+                  <h3 className="font-display text-3xl text-ink">
+                    {submitted === "email" ? "Request sent" : "Continue on WhatsApp"}
+                  </h3>
                   <p className="mx-auto mt-3 max-w-md font-sans text-sm text-ink-muted">
-                    Your session request has been sent. Javies Photography Studio will
-                    get back to you to confirm the details.
+                    {submitted === "email"
+                      ? "Your session request has been sent. Javies Photography Studio will get back to you to confirm the details."
+                      : "Your booking details are filled in on WhatsApp. Send that message so the studio can confirm your date and time."}
                   </p>
                   <a
                     href={whatsappUrl}
@@ -121,7 +138,7 @@ export function BookingExperience() {
                     className="mt-8 inline-flex items-center gap-2 rounded-sm bg-ink px-6 py-3 font-sans text-[11px] font-semibold uppercase tracking-[0.14em] text-warm-white"
                   >
                     <MessageCircle size={16} />
-                    WhatsApp
+                    {submitted === "email" ? "WhatsApp" : "Open WhatsApp"}
                   </a>
                 </motion.div>
               ) : (
