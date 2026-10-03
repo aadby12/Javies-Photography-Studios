@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { Instagram, Mail, MapPin, Phone } from "lucide-react";
 import { siteConfig, navLinks } from "@/lib/site-data";
@@ -10,13 +9,6 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4 lg:gap-8">
           <div>
             <Link href="/" className="inline-flex items-center gap-3">
-              <Image
-                src="/brand/logo-mark.png"
-                alt=""
-                width={44}
-                height={44}
-                className="h-11 w-11 object-contain"
-              />
               <span>
                 <span className="block font-display text-3xl font-semibold text-ink">Javies</span>
                 <span className="mt-1 block font-sans text-[11px] uppercase tracking-[0.18em] text-ink-faint">

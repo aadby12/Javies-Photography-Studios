@@ -85,30 +85,6 @@ export function Hero() {
       </div>
 
       <div className="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-end px-5 pb-28 pt-32 md:px-8 md:pb-32 lg:px-10">
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-3 font-sans text-[11px] font-medium uppercase tracking-[0.28em] text-warm-beige/90 md:text-xs"
-        >
-          Accra, Ghana
-        </motion.p>
-
-        <AnimatePresence mode="wait">
-          <motion.p
-            key={slide.id}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-            className="mb-3 font-sans text-[12px] font-semibold uppercase tracking-[0.22em] text-warm-white"
-          >
-            <Link href={galleryHref} className="hover:text-warm-beige">
-              {slide.category}
-            </Link>
-          </motion.p>
-        </AnimatePresence>
-
         <motion.h1
           initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
