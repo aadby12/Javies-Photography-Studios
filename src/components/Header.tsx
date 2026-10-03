@@ -12,13 +12,22 @@ export function Header() {
   const isHome = pathname === "/";
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [heroLight, setHeroLight] = useState(isHome);
   const solid = !isHome || scrolled || open;
+  const inkNav = solid || (isHome && heroLight && !open);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
+    const syncHero = () => setHeroLight(document.documentElement.dataset.hero === "light");
     onScroll();
+    syncHero();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    const observer = new MutationObserver(syncHero);
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ["data-hero"] });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      observer.disconnect();
+    };
   }, []);
 
   useEffect(() => {
@@ -46,14 +55,14 @@ export function Header() {
             <span className="flex flex-col leading-none">
               <span
                 className={`font-display text-xl font-semibold tracking-wide transition-colors duration-300 md:text-2xl ${
-                  solid ? "text-ink" : "text-warm-white"
+                  inkNav ? "text-ink" : "text-warm-white"
                 }`}
               >
                 Javies
               </span>
               <span
                 className={`mt-0.5 font-sans text-[9px] uppercase tracking-[0.22em] ${
-                  solid ? "text-ink-faint" : "text-warm-white/70"
+                  inkNav ? "text-ink-faint" : "text-warm-white/70"
                 }`}
               >
                 Photography Studios
@@ -67,8 +76,8 @@ export function Header() {
                 key={link.href}
                 href={link.href}
                 className={`font-sans text-[13px] font-medium tracking-wide transition-colors duration-300 hover:text-accent-deep ${
-                  solid ? "text-ink-muted" : "text-warm-white/85"
-                } ${pathname === link.href ? (solid ? "text-ink" : "text-warm-white") : ""}`}
+                  inkNav ? "text-ink-muted" : "text-warm-white/85"
+                } ${pathname === link.href ? (inkNav ? "text-ink" : "text-warm-white") : ""}`}
               >
                 {link.label}
               </Link>
@@ -80,7 +89,7 @@ export function Header() {
               type="button"
               aria-label={open ? "Close menu" : "Open menu"}
               className={`relative z-10 flex h-10 w-10 items-center justify-center rounded-sm lg:hidden ${
-                solid ? "text-ink" : "text-warm-white"
+                inkNav ? "text-ink" : "text-warm-white"
               }`}
               onClick={() => setOpen((v) => !v)}
             >

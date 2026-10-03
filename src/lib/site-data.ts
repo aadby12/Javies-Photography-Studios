@@ -249,6 +249,13 @@ export const aboutContent = {
 
 export const heroSlides = [
   {
+    id: "collage",
+    src: "/images/hero/collage.jpg",
+    alt: "Circular collage of children's sessions by Javies Photography Studio",
+    objectPosition: "center center",
+    tone: "light",
+  },
+  {
     id: "penuel",
     src: "/images/hero/penuel.jpg",
     alt: "Family of four in white and denim, studio session by Javies Photography Studio",

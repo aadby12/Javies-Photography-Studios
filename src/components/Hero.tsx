@@ -31,9 +31,18 @@ export function Hero() {
     setIndex((next + heroSlides.length) % heroSlides.length);
   };
 
+  const light = "tone" in slide && slide.tone === "light";
+
+  useEffect(() => {
+    document.documentElement.dataset.hero = light ? "light" : "dark";
+    return () => {
+      delete document.documentElement.dataset.hero;
+    };
+  }, [light]);
+
   return (
     <section
-      className="relative h-[100svh] min-h-[640px] w-full overflow-hidden"
+      className="relative flex h-[100svh] min-h-[640px] w-full flex-col overflow-hidden"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       aria-roledescription="carousel"
@@ -43,36 +52,63 @@ export function Hero() {
         <AnimatePresence initial={false}>
           <motion.div
             key={slide.src}
-            className="absolute inset-0"
+            className={`absolute inset-0 ${light ? "bg-white" : ""}`}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 1.05, ease: [0.22, 1, 0.36, 1] }}
           >
+            {light ? null : (
+              <Image
+                src={slide.src}
+                alt={slide.alt}
+                fill
+                priority={index === 0}
+                sizes="100vw"
+                className="object-cover"
+                style={{ objectPosition: slide.objectPosition }}
+              />
+            )}
+          </motion.div>
+        </AnimatePresence>
+        {light ? null : (
+          <>
+            <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/40 to-ink/30" />
+            <div className="absolute inset-0 bg-gradient-to-r from-ink/45 via-transparent to-transparent" />
+          </>
+        )}
+      </div>
+
+      <div className="relative z-[1] min-h-0 w-full flex-1">
+        {light ? (
+          <div className="absolute inset-x-4 top-20 bottom-6 sm:inset-x-10 md:inset-x-16 md:top-24 md:bottom-8">
             <Image
               src={slide.src}
               alt={slide.alt}
               fill
-              priority={index === 0}
+              priority
               sizes="100vw"
-              className="object-cover"
-              style={{ objectPosition: slide.objectPosition }}
+              className="object-contain"
             />
-          </motion.div>
-        </AnimatePresence>
-        <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/40 to-ink/30" />
-        <div className="absolute inset-0 bg-gradient-to-r from-ink/45 via-transparent to-transparent" />
+          </div>
+        ) : null}
       </div>
 
-      <div className="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-end px-5 pb-28 pt-32 md:px-8 md:pb-32 lg:px-10">
+      <div className="relative z-10 mx-auto w-full max-w-7xl shrink-0 px-5 pb-28 md:px-8 md:pb-32 lg:px-10">
         <motion.h1
           initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.28, ease: [0.22, 1, 0.36, 1] }}
-          className="max-w-2xl font-display text-display-xl font-medium text-warm-white"
+          className={`max-w-2xl font-display text-display-xl font-medium ${
+            light ? "text-ink" : "text-warm-white"
+          }`}
         >
           Javies
-          <span className="mt-1 block font-display text-[0.42em] font-normal tracking-[0.08em] text-warm-beige/90 md:mt-2">
+          <span
+            className={`mt-1 block font-display text-[0.42em] font-normal tracking-[0.08em] md:mt-2 ${
+              light ? "text-ink/70" : "text-warm-beige/90"
+            }`}
+          >
             Photography Studio
           </span>
         </motion.h1>
@@ -85,13 +121,21 @@ export function Hero() {
         >
           <Link
             href="/#booking"
-            className="inline-flex items-center justify-center rounded-sm bg-warm-white px-7 py-3.5 font-sans text-[12px] font-semibold uppercase tracking-[0.14em] text-ink transition-all duration-300 hover:bg-warm-cream"
+            className={`inline-flex items-center justify-center rounded-sm px-7 py-3.5 font-sans text-[12px] font-semibold uppercase tracking-[0.14em] transition-all duration-300 ${
+              light
+                ? "bg-ink text-warm-white hover:bg-ink/90"
+                : "bg-warm-white text-ink hover:bg-warm-cream"
+            }`}
           >
             Book a Session
           </Link>
           <Link
             href="/gallery"
-            className="inline-flex items-center justify-center rounded-sm border border-warm-white/40 bg-transparent px-7 py-3.5 font-sans text-[12px] font-semibold uppercase tracking-[0.14em] text-warm-white transition-all duration-300 hover:border-warm-white hover:bg-warm-white/10"
+            className={`inline-flex items-center justify-center rounded-sm border bg-transparent px-7 py-3.5 font-sans text-[12px] font-semibold uppercase tracking-[0.14em] transition-all duration-300 ${
+              light
+                ? "border-ink/30 text-ink hover:border-ink hover:bg-ink/5"
+                : "border-warm-white/40 text-warm-white hover:border-warm-white hover:bg-warm-white/10"
+            }`}
           >
             View Gallery
           </Link>
@@ -107,7 +151,13 @@ export function Hero() {
               aria-label={`Show slide ${itemIndex + 1}`}
               onClick={() => go(itemIndex)}
               className={`h-1.5 rounded-full transition-all duration-300 ${
-                itemIndex === index ? "w-8 bg-warm-white" : "w-3 bg-warm-white/40 hover:bg-warm-white/70"
+                light
+                  ? itemIndex === index
+                    ? "w-8 bg-ink"
+                    : "w-3 bg-ink/25 hover:bg-ink/50"
+                  : itemIndex === index
+                    ? "w-8 bg-warm-white"
+                    : "w-3 bg-warm-white/40 hover:bg-warm-white/70"
               }`}
             />
           ))}
@@ -118,7 +168,9 @@ export function Hero() {
         type="button"
         aria-label="Previous slide"
         onClick={() => go(index - 1)}
-        className="absolute left-3 top-1/2 z-10 hidden -translate-y-1/2 rounded-sm p-2 text-warm-white/70 transition-colors hover:text-warm-white md:block"
+        className={`absolute left-3 top-1/2 z-10 hidden -translate-y-1/2 rounded-sm p-2 transition-colors md:block ${
+          light ? "text-ink/50 hover:text-ink" : "text-warm-white/70 hover:text-warm-white"
+        }`}
       >
         <ChevronLeft size={28} />
       </button>
@@ -126,7 +178,9 @@ export function Hero() {
         type="button"
         aria-label="Next slide"
         onClick={() => go(index + 1)}
-        className="absolute right-3 top-1/2 z-10 hidden -translate-y-1/2 rounded-sm p-2 text-warm-white/70 transition-colors hover:text-warm-white md:block"
+        className={`absolute right-3 top-1/2 z-10 hidden -translate-y-1/2 rounded-sm p-2 transition-colors md:block ${
+          light ? "text-ink/50 hover:text-ink" : "text-warm-white/70 hover:text-warm-white"
+        }`}
       >
         <ChevronRight size={28} />
       </button>
@@ -134,7 +188,9 @@ export function Hero() {
       <a
         href="#featured"
         aria-label="Scroll down"
-        className="absolute bottom-8 left-1/2 z-10 hidden -translate-x-1/2 text-warm-white/60 transition-colors hover:text-warm-white md:block"
+        className={`absolute bottom-8 left-1/2 z-10 hidden -translate-x-1/2 transition-colors md:block ${
+          light ? "text-ink/45 hover:text-ink" : "text-warm-white/60 hover:text-warm-white"
+        }`}
       >
         <motion.div
           animate={{ y: [0, 6, 0] }}
