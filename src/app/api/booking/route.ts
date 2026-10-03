@@ -120,11 +120,15 @@ export async function POST(request: Request) {
 
     if (adminError) {
       console.error("[booking] Resend admin error:", adminError);
+      const detail =
+        typeof adminError === "object" && adminError && "message" in adminError
+          ? String(adminError.message)
+          : "Email provider rejected the request.";
       return NextResponse.json(
         {
           ok: false,
-          error:
-            "Something went wrong while sending your request. Please try again or contact us directly on WhatsApp.",
+          code: "email_failed",
+          error: detail,
         },
         { status: 502 }
       );

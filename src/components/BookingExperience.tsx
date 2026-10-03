@@ -72,11 +72,18 @@ export function BookingExperience() {
         return;
       }
 
-      openWhatsApp();
-      setSubmitted("whatsapp");
+      if (data.code === "unconfigured") {
+        openWhatsApp();
+        setSubmitted("whatsapp");
+        return;
+      }
+
+      setError(
+        data.error ||
+          "The request could not be emailed. Use the WhatsApp button to send it directly."
+      );
     } catch {
-      openWhatsApp();
-      setSubmitted("whatsapp");
+      setError("The request could not be emailed. Use the WhatsApp button to send it directly.");
     } finally {
       setSubmitting(false);
     }
