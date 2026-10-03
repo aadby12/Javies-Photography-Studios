@@ -33,6 +33,14 @@ function isValidEmail(email: string): boolean {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
+function readEnv(name: string): string {
+  return (process.env[name] || "")
+    .trim()
+    .replace(/^['"]|['"]$/g, "")
+    .replace(/^Bearer\s+/i, "")
+    .trim();
+}
+
 export async function POST(request: Request) {
   try {
     const body = (await request.json()) as BookingBody;
@@ -71,10 +79,10 @@ export async function POST(request: Request) {
       );
     }
 
-    const apiKey = process.env.RESEND_API_KEY;
-    const javiesEmail = process.env.JAVIES_EMAIL;
+    const apiKey = readEnv("RESEND_API_KEY");
+    const javiesEmail = readEnv("JAVIES_EMAIL");
     const fromEmail =
-      process.env.BOOKING_FROM_EMAIL || "Javies Photography Studio <onboarding@resend.dev>";
+      readEnv("BOOKING_FROM_EMAIL") || "Javies Photography Studio <onboarding@resend.dev>";
 
     if (!apiKey || !javiesEmail) {
       return NextResponse.json(
