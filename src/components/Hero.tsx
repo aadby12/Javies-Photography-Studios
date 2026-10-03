@@ -31,6 +31,9 @@ export function Hero() {
     setIndex((next + heroSlides.length) % heroSlides.length);
   };
 
+  const contained = "fit" in slide && slide.fit === "contain";
+  const galleryHref = slide.id === "all" ? "/gallery" : `/gallery?category=${slide.id}`;
+
   return (
     <section
       className="relative h-[100svh] min-h-[640px] w-full overflow-hidden"
@@ -43,25 +46,42 @@ export function Hero() {
         <AnimatePresence initial={false}>
           <motion.div
             key={slide.src}
-            className="absolute inset-0"
+            className={`absolute inset-0 ${contained ? "bg-black" : ""}`}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 1.05, ease: [0.22, 1, 0.36, 1] }}
           >
-            <Image
-              src={slide.src}
-              alt={slide.alt}
-              fill
-              priority={index === 0}
-              sizes="100vw"
-              className="object-cover"
-              style={{ objectPosition: slide.objectPosition }}
-            />
+            {contained ? (
+              <div className="absolute inset-x-3 top-20 bottom-[40%] sm:inset-x-10 md:inset-x-20 md:top-24 md:bottom-[34%]">
+                <Image
+                  src={slide.src}
+                  alt={slide.alt}
+                  fill
+                  priority={index === 0}
+                  sizes="100vw"
+                  className="object-contain"
+                />
+              </div>
+            ) : (
+              <Image
+                src={slide.src}
+                alt={slide.alt}
+                fill
+                priority={index === 0}
+                sizes="100vw"
+                className="object-cover"
+                style={{ objectPosition: slide.objectPosition }}
+              />
+            )}
           </motion.div>
         </AnimatePresence>
-        <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/40 to-ink/30" />
-        <div className="absolute inset-0 bg-gradient-to-r from-ink/45 via-transparent to-transparent" />
+        {contained ? null : (
+          <>
+            <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/40 to-ink/30" />
+            <div className="absolute inset-0 bg-gradient-to-r from-ink/45 via-transparent to-transparent" />
+          </>
+        )}
       </div>
 
       <div className="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-end px-5 pb-28 pt-32 md:px-8 md:pb-32 lg:px-10">
@@ -83,7 +103,7 @@ export function Hero() {
             transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
             className="mb-3 font-sans text-[12px] font-semibold uppercase tracking-[0.22em] text-warm-white"
           >
-            <Link href={`/gallery?category=${slide.id}`} className="hover:text-warm-beige">
+            <Link href={galleryHref} className="hover:text-warm-beige">
               {slide.category}
             </Link>
           </motion.p>
@@ -114,10 +134,10 @@ export function Hero() {
             Book a Session
           </Link>
           <Link
-            href={`/gallery?category=${slide.id}`}
+            href={galleryHref}
             className="inline-flex items-center justify-center rounded-sm border border-warm-white/40 bg-transparent px-7 py-3.5 font-sans text-[12px] font-semibold uppercase tracking-[0.14em] text-warm-white transition-all duration-300 hover:border-warm-white hover:bg-warm-white/10"
           >
-            View {slide.category}
+            {slide.id === "all" ? "View Gallery" : `View ${slide.category}`}
           </Link>
         </motion.div>
 

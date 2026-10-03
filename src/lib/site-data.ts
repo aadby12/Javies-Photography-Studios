@@ -249,6 +249,14 @@ export const aboutContent = {
 
 export const heroSlides = [
   {
+    id: "all",
+    category: "Our work",
+    src: "/images/hero-collage.jpg",
+    alt: "Circular collage of newborn and children's sessions by Javies Photography Studio",
+    objectPosition: "center center",
+    fit: "contain",
+  },
+  {
     id: "milestone",
     category: "Milestone",
     src: "/images/service-milestone.jpg",
