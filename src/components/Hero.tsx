@@ -31,57 +31,37 @@ export function Hero() {
     setIndex((next + heroSlides.length) % heroSlides.length);
   };
 
-  const contained = "fit" in slide && slide.fit === "contain";
-  const galleryHref = slide.id === "all" ? "/gallery" : `/gallery?category=${slide.id}`;
-
   return (
     <section
       className="relative h-[100svh] min-h-[640px] w-full overflow-hidden"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       aria-roledescription="carousel"
-      aria-label="Photography services"
+      aria-label="Studio photography"
     >
       <div className="absolute inset-0">
         <AnimatePresence initial={false}>
           <motion.div
             key={slide.src}
-            className={`absolute inset-0 ${contained ? "bg-black" : ""}`}
+            className="absolute inset-0"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 1.05, ease: [0.22, 1, 0.36, 1] }}
           >
-            {contained ? (
-              <div className="absolute inset-x-3 top-20 bottom-[40%] sm:inset-x-10 md:inset-x-20 md:top-24 md:bottom-[34%]">
-                <Image
-                  src={slide.src}
-                  alt={slide.alt}
-                  fill
-                  priority={index === 0}
-                  sizes="100vw"
-                  className="object-contain"
-                />
-              </div>
-            ) : (
-              <Image
-                src={slide.src}
-                alt={slide.alt}
-                fill
-                priority={index === 0}
-                sizes="100vw"
-                className="object-cover"
-                style={{ objectPosition: slide.objectPosition }}
-              />
-            )}
+            <Image
+              src={slide.src}
+              alt={slide.alt}
+              fill
+              priority={index === 0}
+              sizes="100vw"
+              className="object-cover"
+              style={{ objectPosition: slide.objectPosition }}
+            />
           </motion.div>
         </AnimatePresence>
-        {contained ? null : (
-          <>
-            <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/40 to-ink/30" />
-            <div className="absolute inset-0 bg-gradient-to-r from-ink/45 via-transparent to-transparent" />
-          </>
-        )}
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/40 to-ink/30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-ink/45 via-transparent to-transparent" />
       </div>
 
       <div className="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-end px-5 pb-28 pt-32 md:px-8 md:pb-32 lg:px-10">
@@ -110,10 +90,10 @@ export function Hero() {
             Book a Session
           </Link>
           <Link
-            href={galleryHref}
+            href="/gallery"
             className="inline-flex items-center justify-center rounded-sm border border-warm-white/40 bg-transparent px-7 py-3.5 font-sans text-[12px] font-semibold uppercase tracking-[0.14em] text-warm-white transition-all duration-300 hover:border-warm-white hover:bg-warm-white/10"
           >
-            {slide.id === "all" ? "View Gallery" : `View ${slide.category}`}
+            View Gallery
           </Link>
         </motion.div>
 
@@ -124,7 +104,7 @@ export function Hero() {
               type="button"
               role="tab"
               aria-selected={itemIndex === index}
-              aria-label={`Show ${item.category}`}
+              aria-label={`Show slide ${itemIndex + 1}`}
               onClick={() => go(itemIndex)}
               className={`h-1.5 rounded-full transition-all duration-300 ${
                 itemIndex === index ? "w-8 bg-warm-white" : "w-3 bg-warm-white/40 hover:bg-warm-white/70"
@@ -136,7 +116,7 @@ export function Hero() {
 
       <button
         type="button"
-        aria-label="Previous category"
+        aria-label="Previous slide"
         onClick={() => go(index - 1)}
         className="absolute left-3 top-1/2 z-10 hidden -translate-y-1/2 rounded-sm p-2 text-warm-white/70 transition-colors hover:text-warm-white md:block"
       >
@@ -144,7 +124,7 @@ export function Hero() {
       </button>
       <button
         type="button"
-        aria-label="Next category"
+        aria-label="Next slide"
         onClick={() => go(index + 1)}
         className="absolute right-3 top-1/2 z-10 hidden -translate-y-1/2 rounded-sm p-2 text-warm-white/70 transition-colors hover:text-warm-white md:block"
       >

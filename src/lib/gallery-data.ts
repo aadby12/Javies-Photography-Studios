@@ -289,17 +289,6 @@ export const galleryItems: GalleryItem[] = [
     "includeInAll": true
   },
   {
-    "id": "55cc4ca7de0e",
-    "src": "/images/gallery/milestone-ankomaa@1-(12)-7bdcde.jpg",
-    "alt": "milestone photography by Javies Photography Studio",
-    "caption": "Milestone",
-    "category": "milestone",
-    "width": 1080,
-    "height": 1350,
-    "ratio": 0.8,
-    "includeInAll": false
-  },
-  {
     "id": "7e03d350c4d9",
     "src": "/images/gallery/milestone-arielle-and-brielle@1-(1)-89d75d.jpg",
     "alt": "milestone photography by Javies Photography Studio",
@@ -366,17 +355,6 @@ export const galleryItems: GalleryItem[] = [
     "includeInAll": true
   },
   {
-    "id": "e39ccb22d8d3",
-    "src": "/images/gallery/milestone-awurayaa-(10)-d3e765.jpg",
-    "alt": "milestone photography by Javies Photography Studio",
-    "caption": "Milestone",
-    "category": "milestone",
-    "width": 2000,
-    "height": 1505,
-    "ratio": 1.3289,
-    "includeInAll": false
-  },
-  {
     "id": "208156b80c9a",
     "src": "/images/gallery/milestone-ayeyi@1-(1)-208156.jpg",
     "alt": "milestone photography by Javies Photography Studio",
@@ -419,17 +397,6 @@ export const galleryItems: GalleryItem[] = [
     "height": 2400,
     "ratio": 0.8,
     "includeInAll": true
-  },
-  {
-    "id": "f519ca06368c",
-    "src": "/images/gallery/milestone-barimaba@1-(6)-10d44e.jpg",
-    "alt": "milestone photography by Javies Photography Studio",
-    "caption": "Milestone",
-    "category": "milestone",
-    "width": 2000,
-    "height": 1600,
-    "ratio": 1.25,
-    "includeInAll": false
   },
   {
     "id": "cddcbb175f94",
@@ -487,15 +454,15 @@ export const galleryItems: GalleryItem[] = [
     "includeInAll": true
   },
   {
-    "id": "bbcabb7ec64b",
-    "src": "/images/gallery/milestone-byran@1-(16)-bbcabb.jpg",
+    "id": "ece349e73201",
+    "src": "/images/gallery/milestone-milan@3ms-(14)-ece349.jpg",
     "alt": "milestone photography by Javies Photography Studio",
     "caption": "Milestone",
     "category": "milestone",
     "width": 2000,
-    "height": 1334,
-    "ratio": 1.4993,
-    "includeInAll": false
+    "height": 1600,
+    "ratio": 1.25,
+    "includeInAll": true
   },
   {
     "id": "aae297fe5958",
@@ -661,17 +628,6 @@ export const galleryItems: GalleryItem[] = [
     "height": 2400,
     "ratio": 0.8,
     "includeInAll": true
-  },
-  {
-    "id": "90bc0ce555a2",
-    "src": "/images/gallery/milestone-jayden@1-(9)-90bc0c.jpg",
-    "alt": "milestone photography by Javies Photography Studio",
-    "caption": "Milestone",
-    "category": "milestone",
-    "width": 2000,
-    "height": 1600,
-    "ratio": 1.25,
-    "includeInAll": false
   },
   {
     "id": "cb20f292fb10",
@@ -1004,17 +960,6 @@ export const galleryItems: GalleryItem[] = [
     "includeInAll": true
   },
   {
-    "id": "36e6bd78a243",
-    "src": "/images/gallery/milestone-princess@1-(7)-36e6bd.jpg",
-    "alt": "milestone photography by Javies Photography Studio",
-    "caption": "Milestone",
-    "category": "milestone",
-    "width": 2000,
-    "height": 1503,
-    "ratio": 1.3307,
-    "includeInAll": false
-  },
-  {
     "id": "f51e5d8fc84d",
     "src": "/images/gallery/milestone-raizel-&-royale@1-(3)-f51e5d.jpg",
     "alt": "milestone photography by Javies Photography Studio",
@@ -1145,17 +1090,6 @@ export const galleryItems: GalleryItem[] = [
     "height": 2400,
     "ratio": 0.8,
     "includeInAll": true
-  },
-  {
-    "id": "ad5aa2f8bcb4",
-    "src": "/images/gallery/milestone-sreyhan@3ms-(25)-ad5aa2.jpg",
-    "alt": "milestone photography by Javies Photography Studio",
-    "caption": "Milestone",
-    "category": "milestone",
-    "width": 2000,
-    "height": 1503,
-    "ratio": 1.3307,
-    "includeInAll": false
   },
   {
     "id": "a9b1efe1a0be",
@@ -1301,17 +1235,6 @@ export const galleryItems: GalleryItem[] = [
     "includeInAll": true
   },
   {
-    "id": "69a5d96344af",
-    "src": "/images/gallery/family-lroy@1-(11)-69a5d9.jpg",
-    "alt": "family photography by Javies Photography Studio",
-    "caption": "Family",
-    "category": "family",
-    "width": 1920,
-    "height": 2400,
-    "ratio": 0.8,
-    "includeInAll": false
-  },
-  {
     "id": "88d861644ea2",
     "src": "/images/gallery/family-madison@1-(24)-88d861.jpg",
     "alt": "family photography by Javies Photography Studio",
@@ -1321,17 +1244,6 @@ export const galleryItems: GalleryItem[] = [
     "height": 2400,
     "ratio": 0.8,
     "includeInAll": true
-  },
-  {
-    "id": "f29cb6b052e3",
-    "src": "/images/gallery/family-nana-kwame-@1-(25)-f29cb6.jpg",
-    "alt": "family photography by Javies Photography Studio",
-    "caption": "Family",
-    "category": "family",
-    "width": 1920,
-    "height": 2400,
-    "ratio": 0.8,
-    "includeInAll": false
   },
   {
     "id": "f8da3a3696c1",
@@ -1357,25 +1269,14 @@ export const galleryItems: GalleryItem[] = [
   },
   {
     "id": "6be93a701f15",
-    "src": "/images/gallery/family-penuel@5-(19)-6be93a.jpg",
-    "alt": "family photography by Javies Photography Studio",
-    "caption": "Family",
-    "category": "family",
+    "src": "/images/gallery/milestone-penuel@5-(19)-6be93a.jpg",
+    "alt": "milestone photography by Javies Photography Studio",
+    "caption": "Milestone",
+    "category": "milestone",
     "width": 2000,
     "height": 1505,
     "ratio": 1.3289,
     "includeInAll": true
-  },
-  {
-    "id": "a6a25b8220e7",
-    "src": "/images/gallery/family-sesi@2-(21)-a6a25b.jpg",
-    "alt": "family photography by Javies Photography Studio",
-    "caption": "Family",
-    "category": "family",
-    "width": 1920,
-    "height": 2400,
-    "ratio": 0.8,
-    "includeInAll": false
   },
   {
     "id": "4adc67cf7477",
@@ -1488,17 +1389,6 @@ export const galleryItems: GalleryItem[] = [
     "includeInAll": true
   },
   {
-    "id": "4f75ee0e73ab",
-    "src": "/images/gallery/newborn-baby-nana-kwame-(1)-4279b2.jpg",
-    "alt": "newborn photography by Javies Photography Studio",
-    "caption": "Newborn",
-    "category": "newborn",
-    "width": 1920,
-    "height": 2400,
-    "ratio": 0.8,
-    "includeInAll": false
-  },
-  {
     "id": "fd743fdb755d",
     "src": "/images/gallery/newborn-baby-naseda-(1)-29715d.jpg",
     "alt": "newborn photography by Javies Photography Studio",
@@ -1585,50 +1475,6 @@ export const galleryItems: GalleryItem[] = [
     "height": 1505,
     "ratio": 1.3289,
     "includeInAll": true
-  },
-  {
-    "id": "3846f16e5979",
-    "src": "/images/gallery/newborn-milan@3ms-(12)-3846f1.jpg",
-    "alt": "newborn photography by Javies Photography Studio",
-    "caption": "Newborn",
-    "category": "newborn",
-    "width": 1919,
-    "height": 2400,
-    "ratio": 0.7996,
-    "includeInAll": true
-  },
-  {
-    "id": "168b2674175e",
-    "src": "/images/gallery/newborn-skylar@1-(16)-d59e4e.jpg",
-    "alt": "newborn photography by Javies Photography Studio",
-    "caption": "Newborn",
-    "category": "newborn",
-    "width": 1920,
-    "height": 2400,
-    "ratio": 0.8,
-    "includeInAll": false
-  },
-  {
-    "id": "579ae39c2ead",
-    "src": "/images/gallery/newborn-sreyhan@3ms-(4)-34b3cd.jpg",
-    "alt": "newborn photography by Javies Photography Studio",
-    "caption": "Newborn",
-    "category": "newborn",
-    "width": 2000,
-    "height": 1600,
-    "ratio": 1.25,
-    "includeInAll": false
-  },
-  {
-    "id": "a6a5a0e504fb",
-    "src": "/images/gallery/newborn-zaine@1-(10)-3ffc63.jpg",
-    "alt": "newborn photography by Javies Photography Studio",
-    "caption": "Newborn",
-    "category": "newborn",
-    "width": 2000,
-    "height": 1600,
-    "ratio": 1.25,
-    "includeInAll": false
   },
   {
     "id": "d0b5a31632bb",
@@ -2027,17 +1873,6 @@ export const galleryItems: GalleryItem[] = [
     "includeInAll": true
   },
   {
-    "id": "e65239b701d7",
-    "src": "/images/gallery/portrait-ethan@1-(10)-e65239.jpg",
-    "alt": "portrait photography by Javies Photography Studio",
-    "caption": "Portrait",
-    "category": "portrait",
-    "width": 1920,
-    "height": 2400,
-    "ratio": 0.8,
-    "includeInAll": false
-  },
-  {
     "id": "09f70ba1d717",
     "src": "/images/gallery/portrait-ida-nyantakyi-(10)-09f70b.jpg",
     "alt": "portrait photography by Javies Photography Studio",
@@ -2126,28 +1961,6 @@ export const galleryItems: GalleryItem[] = [
     "includeInAll": true
   },
   {
-    "id": "465e0ec528c1",
-    "src": "/images/gallery/traditional-abdul-samed@1-(6)-fd7244.jpg",
-    "alt": "traditional photography by Javies Photography Studio",
-    "caption": "Traditional",
-    "category": "traditional",
-    "width": 1920,
-    "height": 2400,
-    "ratio": 0.8,
-    "includeInAll": false
-  },
-  {
-    "id": "38e7ac5c9646",
-    "src": "/images/gallery/traditional-adam@1-(27)-e2d740.jpg",
-    "alt": "traditional photography by Javies Photography Studio",
-    "caption": "Traditional",
-    "category": "traditional",
-    "width": 2000,
-    "height": 1600,
-    "ratio": 1.25,
-    "includeInAll": false
-  },
-  {
     "id": "42987f68f2a4",
     "src": "/images/gallery/traditional-adi@3-(5)-20d1fa.jpg",
     "alt": "traditional photography by Javies Photography Studio",
@@ -2203,17 +2016,6 @@ export const galleryItems: GalleryItem[] = [
     "includeInAll": true
   },
   {
-    "id": "76b7606af91a",
-    "src": "/images/gallery/traditional-dilys@5-(5)-31c7a0.jpg",
-    "alt": "traditional photography by Javies Photography Studio",
-    "caption": "Traditional",
-    "category": "traditional",
-    "width": 1920,
-    "height": 2400,
-    "ratio": 0.8,
-    "includeInAll": false
-  },
-  {
     "id": "1618b6c5aa6a",
     "src": "/images/gallery/traditional-javi7118-61d1a4.jpg",
     "alt": "traditional photography by Javies Photography Studio",
@@ -2245,17 +2047,6 @@ export const galleryItems: GalleryItem[] = [
     "height": 2400,
     "ratio": 0.7525,
     "includeInAll": true
-  },
-  {
-    "id": "bac315566861",
-    "src": "/images/gallery/traditional-milan@1-(3)-70fafd.jpg",
-    "alt": "traditional photography by Javies Photography Studio",
-    "caption": "Traditional",
-    "category": "traditional",
-    "width": 1920,
-    "height": 2400,
-    "ratio": 0.8,
-    "includeInAll": false
   },
   {
     "id": "4994c45e2c59",
@@ -2355,17 +2146,6 @@ export const galleryItems: GalleryItem[] = [
     "height": 473,
     "ratio": 1.3362,
     "includeInAll": true
-  },
-  {
-    "id": "7b646c507200",
-    "src": "/images/gallery/christmas-joey@1-(15)-8d5a9b.jpg",
-    "alt": "christmas photography by Javies Photography Studio",
-    "caption": "Christmas",
-    "category": "christmas",
-    "width": 632,
-    "height": 473,
-    "ratio": 1.3362,
-    "includeInAll": false
   },
   {
     "id": "076165483aa1",
