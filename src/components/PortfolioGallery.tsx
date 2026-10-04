@@ -123,7 +123,7 @@ export function PortfolioGallery({
                     width={item.width}
                     height={item.height}
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    quality={85}
+                    quality={92}
                     className="h-auto w-full"
                   />
                   <span className="pointer-events-none absolute inset-0 bg-ink/0 transition-colors duration-400 group-hover:bg-ink/15" />

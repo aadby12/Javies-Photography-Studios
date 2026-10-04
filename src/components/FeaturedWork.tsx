@@ -40,7 +40,8 @@ export function FeaturedWork() {
                   alt={item.alt}
                   width={900}
                   height={1200}
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 640px"
+                  quality={92}
                   className="h-auto w-full object-cover transition-transform duration-700 ease-premium group-hover:scale-[1.02]"
                 />
                 <div className="pointer-events-none absolute inset-0 bg-ink/0 transition-colors duration-400 group-hover:bg-ink/15" />

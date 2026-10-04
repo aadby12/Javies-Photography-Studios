@@ -53,7 +53,8 @@ export function ServicesPreview({ fullPage = false }: ServicesPreviewProps) {
                   src={service.image}
                   alt={service.imageAlt}
                   fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 640px"
+                  quality={92}
                   className="object-cover transition-transform duration-700 ease-premium group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/55 via-transparent to-transparent" />

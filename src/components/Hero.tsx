@@ -65,6 +65,7 @@ export function Hero() {
                 fill
                 priority={index === 0}
                 sizes="100vw"
+                quality={92}
                 className="object-cover"
                 style={{ objectPosition: slide.objectPosition }}
               />
@@ -88,6 +89,7 @@ export function Hero() {
               fill
               priority
               sizes="100vw"
+              quality={92}
               className="object-contain"
             />
           </div>
