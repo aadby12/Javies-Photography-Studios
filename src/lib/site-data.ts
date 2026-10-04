@@ -403,10 +403,11 @@ export const aboutContent = {
 export const heroSlides = [
   {
     id: "collage",
-    src: "/images/hero/collage-black.jpg",
+    src: "/images/hero/collage-white.jpg",
     alt: "Circular collage of children's sessions by Javies Photography Studio",
     objectPosition: "center center",
     layout: "poster",
+    tone: "light",
   },
   {
     id: "milan",

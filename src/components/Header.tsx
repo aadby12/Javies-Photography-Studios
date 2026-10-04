@@ -12,7 +12,7 @@ export function Header() {
   const isHome = pathname === "/";
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const [heroLight, setHeroLight] = useState(false);
+  const [heroLight, setHeroLight] = useState(isHome);
   const solid = !isHome || scrolled || open;
   const inkNav = solid || (isHome && heroLight && !open);
 
