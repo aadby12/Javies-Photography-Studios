@@ -1257,17 +1257,6 @@ export const galleryItems: GalleryItem[] = [
     "includeInAll": true
   },
   {
-    "id": "6be93a701f15",
-    "src": "/images/gallery/milestone-penuel@5-(19)-6be93a.jpg",
-    "alt": "milestone photography by Javies Photography Studio",
-    "caption": "Milestone",
-    "category": "milestone",
-    "width": 2000,
-    "height": 1505,
-    "ratio": 1.3289,
-    "includeInAll": true
-  },
-  {
     "id": "4adc67cf7477",
     "src": "/images/gallery/family-sreyhan@3ms-(13)-4adc67.jpg",
     "alt": "family photography by Javies Photography Studio",

@@ -1,64 +1,94 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { packages } from "@/lib/site-data";
+import { rateCard } from "@/lib/site-data";
 
 export function Packages() {
   return (
     <section className="bg-warm-cream py-16 md:py-24">
       <div className="mx-auto max-w-7xl px-5 md:px-8 lg:px-10">
         <p className="mb-3 font-sans text-[11px] font-medium uppercase tracking-[0.24em] text-accent-deep">
-          Packages
+          2026 rates
         </p>
-        <h2 className="font-display text-display-md font-medium text-ink">
-          Sessions & packages
-        </h2>
-        <p className="mt-3 max-w-lg font-sans text-sm text-ink-muted">
-          Package details and pricing can be confirmed when you enquire.
+        <h2 className="font-display text-display-md font-medium text-ink">Sessions & packages</h2>
+        <p className="mt-3 max-w-xl font-sans text-sm text-ink-muted">
+          Prices are in Ghana cedis. Maternity, traditional, and Christmas sessions are quoted when
+          you enquire.
         </p>
 
-        <div className="mt-12 space-y-8">
-          {packages.map((pkg, i) => (
-            <motion.article
-              key={pkg.id}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.05, duration: 0.45 }}
-              className="grid overflow-hidden rounded-sm border border-warm-beige bg-warm-white md:grid-cols-5"
-            >
-              <div className="relative aspect-[4/5] md:col-span-2 md:aspect-auto md:min-h-[280px]">
-                <Image
-                  src={pkg.image}
-                  alt={pkg.name}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 40vw"
-                  className="object-cover"
-                />
+        <div className="mt-14 space-y-16">
+          {rateCard.groups.map((group) => (
+            <div key={group.id}>
+              <div className="flex flex-wrap items-end justify-between gap-3">
+                <div>
+                  <h3 className="font-display text-3xl text-ink">{group.name}</h3>
+                  <p className="mt-1 font-sans text-sm text-ink-muted">{group.detail}</p>
+                </div>
+                <p className="max-w-sm font-sans text-sm text-ink-muted">{group.note}</p>
               </div>
-              <div className="flex flex-col justify-center p-6 md:col-span-3 md:p-10">
-                <h3 className="font-display text-2xl text-ink md:text-3xl">{pkg.name}</h3>
-                <p className="mt-2 font-sans text-sm text-ink-muted">{pkg.description}</p>
-                <ul className="mt-5 space-y-1.5">
-                  {pkg.includes.map((item) => (
-                    <li key={item} className="font-sans text-sm text-ink-muted">
-                      · {item}
-                    </li>
-                  ))}
-                </ul>
-                <p className="mt-5 font-sans text-sm font-medium text-ink">{pkg.price}</p>
-                <Link
-                  href="/#booking"
-                  className="mt-6 inline-flex w-fit rounded-sm bg-ink px-6 py-3 font-sans text-[11px] font-semibold uppercase tracking-[0.14em] text-warm-white transition-colors hover:bg-ink-soft"
-                >
-                  Enquire
-                </Link>
+              <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {group.tiers.map((tier, i) => (
+                  <motion.article
+                    key={tier.name}
+                    initial={{ opacity: 0, y: 12 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: (i % 3) * 0.04, duration: 0.4 }}
+                    className="flex flex-col rounded-sm border border-warm-beige bg-warm-white p-6"
+                  >
+                    <h4 className="font-display text-xl text-ink">{tier.name}</h4>
+                    <p className="mt-2 font-sans text-lg font-medium text-ink">{tier.price}</p>
+                    <ul className="mt-4 space-y-1.5">
+                      {tier.includes.map((item) => (
+                        <li key={item} className="font-sans text-sm text-ink-muted">
+                          · {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </motion.article>
+                ))}
               </div>
-            </motion.article>
+            </div>
           ))}
         </div>
+
+        <div className="mt-16">
+          <h3 className="font-display text-3xl text-ink">Canvas frames</h3>
+          <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+            {rateCard.frames.map((frame) => (
+              <div
+                key={frame.size}
+                className="rounded-sm border border-warm-beige bg-warm-white px-4 py-5 text-center"
+              >
+                <p className="font-display text-xl text-ink">{frame.size}</p>
+                <p className="mt-1 font-sans text-sm text-ink-muted">{frame.price}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <p className="mt-10 max-w-3xl font-sans text-sm leading-relaxed text-ink-muted">
+          {rateCard.callOut}
+        </p>
+
+        <div className="mt-12 max-w-3xl">
+          <h3 className="font-display text-2xl text-ink">Terms</h3>
+          <ul className="mt-4 space-y-2">
+            {rateCard.terms.map((term) => (
+              <li key={term} className="font-sans text-sm leading-relaxed text-ink-muted">
+                · {term}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <Link
+          href="/#booking"
+          className="mt-10 inline-flex rounded-sm bg-ink px-6 py-3 font-sans text-[11px] font-semibold uppercase tracking-[0.14em] text-warm-white transition-colors hover:bg-ink-soft"
+        >
+          Enquire
+        </Link>
       </div>
     </section>
   );

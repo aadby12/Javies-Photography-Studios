@@ -76,6 +76,8 @@ const SKIP_FILES = new Set([
   "maternity-javi1392hd-a3ef97.jpg",
   "maternity-maternity-(19)-d53e6d.jpg",
   "family-jpsi0115-ae986a.jpg",
+  "milestone-penuel@5-(19)-6be93a.jpg",
+  "penuel@5 (19).jpg",
   "javi0738.jpg",
   "javi1392hd.jpg",
   "maternity (19).jpg",
