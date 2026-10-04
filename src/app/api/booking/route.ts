@@ -33,6 +33,11 @@ function isValidEmail(email: string): boolean {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
+function isValidPhone(phone: string): boolean {
+  const digits = phone.replace(/\D/g, "");
+  return digits.length >= 9 && digits.length <= 15;
+}
+
 function readEnv(name: string): string {
   return (process.env[name] || "")
     .trim()
@@ -67,7 +72,14 @@ export async function POST(request: Request) {
 
     if (!isValidEmail(email)) {
       return NextResponse.json(
-        { ok: false, error: "Please enter a valid email address." },
+        { ok: false, error: "Enter a valid email address." },
+        { status: 400 }
+      );
+    }
+
+    if (!isValidPhone(phone)) {
+      return NextResponse.json(
+        { ok: false, error: "Enter a valid phone number." },
         { status: 400 }
       );
     }
@@ -128,15 +140,11 @@ export async function POST(request: Request) {
 
     if (adminError) {
       console.error("[booking] Resend admin error:", adminError);
-      const detail =
-        typeof adminError === "object" && adminError && "message" in adminError
-          ? String(adminError.message)
-          : "Email provider rejected the request.";
       return NextResponse.json(
         {
           ok: false,
           code: "email_failed",
-          error: detail,
+          error: "Something went wrong.",
         },
         { status: 502 }
       );

@@ -37,6 +37,15 @@ export function Header() {
     };
   }, [open]);
 
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [open]);
+
   return (
     <>
       <header
@@ -75,9 +84,16 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`font-sans text-[13px] font-medium tracking-wide transition-colors duration-300 hover:text-accent-deep ${
+                aria-current={pathname === link.href ? "page" : undefined}
+                className={`font-sans text-[13px] font-medium tracking-wide transition-colors duration-300 hover:text-accent-deep focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 ${
                   inkNav ? "text-ink-muted" : "text-warm-white/85"
-                } ${pathname === link.href ? (inkNav ? "text-ink" : "text-warm-white") : ""}`}
+                } ${
+                  pathname === link.href
+                    ? inkNav
+                      ? "text-ink underline decoration-accent-deep decoration-1 underline-offset-8"
+                      : "text-warm-white underline decoration-warm-white/80 decoration-1 underline-offset-8"
+                    : ""
+                }`}
               >
                 {link.label}
               </Link>
@@ -88,6 +104,7 @@ export function Header() {
             <button
               type="button"
               aria-label={open ? "Close menu" : "Open menu"}
+              aria-expanded={open}
               className={`relative z-10 flex h-10 w-10 items-center justify-center rounded-sm lg:hidden ${
                 inkNav ? "text-ink" : "text-warm-white"
               }`}
@@ -120,7 +137,10 @@ export function Header() {
                     <Link
                       href={link.href}
                       onClick={() => setOpen(false)}
-                      className="block border-b border-warm-beige py-4 font-display text-3xl text-ink"
+                      aria-current={pathname === link.href ? "page" : undefined}
+                      className={`block border-b border-warm-beige py-4 font-display text-3xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
+                        pathname === link.href ? "text-accent-deep" : "text-ink"
+                      }`}
                     >
                       {link.label}
                     </Link>

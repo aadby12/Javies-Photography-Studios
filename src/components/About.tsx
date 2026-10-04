@@ -26,17 +26,37 @@ export function About() {
               <p className="mt-5 font-sans text-base font-light leading-relaxed text-ink-muted">
                 {aboutContent.lead}
               </p>
-              <p className="mt-6 font-sans text-sm text-ink-faint">{aboutContent.location}</p>
-              <p className="mt-1 font-sans text-sm text-ink-faint">{siteConfig.phone}</p>
+              <a
+                href={siteConfig.mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-6 block font-sans text-sm text-ink-faint transition-colors hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+              >
+                {aboutContent.location}
+              </a>
+              <a
+                href={`tel:${siteConfig.phoneInternational}`}
+                className="mt-1 block font-sans text-sm text-ink-faint transition-colors hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+              >
+                {siteConfig.phone}
+              </a>
               <a
                 href={`mailto:${siteConfig.email}`}
-                className="mt-1 block font-sans text-sm text-ink-faint transition-colors hover:text-ink"
+                className="mt-1 block font-sans text-sm text-ink-faint transition-colors hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
               >
                 {siteConfig.email}
               </a>
+              <a
+                href={siteConfig.instagram.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-1 block font-sans text-sm text-ink-faint transition-colors hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+              >
+                {siteConfig.instagram.handle}
+              </a>
               <Link
                 href="/#booking"
-                className="mt-8 inline-flex rounded-sm bg-ink px-7 py-3.5 font-sans text-[12px] font-semibold uppercase tracking-[0.14em] text-warm-white transition-colors hover:bg-ink-soft"
+                className="mt-8 inline-flex rounded-sm bg-ink px-7 py-3.5 font-sans text-[12px] font-semibold uppercase tracking-[0.14em] text-warm-white transition-colors hover:bg-ink-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 active:translate-y-px"
               >
                 Book a Session
               </Link>

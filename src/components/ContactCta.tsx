@@ -20,14 +20,14 @@ export function ContactCta() {
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
           <a
             href={`tel:${siteConfig.phoneInternational}`}
-            className="inline-flex items-center gap-2 rounded-sm bg-warm-white px-5 py-3.5 font-sans text-[12px] font-semibold uppercase tracking-[0.12em] text-ink"
+            className="inline-flex items-center gap-2 rounded-sm bg-warm-white px-5 py-3.5 font-sans text-[12px] font-semibold uppercase tracking-[0.12em] text-ink transition-colors hover:bg-warm-cream focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-ink active:translate-y-px"
           >
             <Phone size={16} />
             {siteConfig.phone}
           </a>
           <a
             href={`mailto:${siteConfig.email}`}
-            className="inline-flex items-center gap-2 rounded-sm border border-warm-white/30 px-5 py-3.5 font-sans text-[12px] font-semibold uppercase tracking-[0.12em] text-warm-white"
+            className="inline-flex items-center gap-2 rounded-sm border border-warm-white/30 px-5 py-3.5 font-sans text-[12px] font-semibold uppercase tracking-[0.12em] text-warm-white transition-colors hover:border-warm-white hover:bg-warm-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-ink active:translate-y-px"
           >
             <Mail size={16} />
             Email
@@ -36,7 +36,7 @@ export function ContactCta() {
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-sm border border-warm-white/30 px-5 py-3.5 font-sans text-[12px] font-semibold uppercase tracking-[0.12em] text-warm-white"
+            className="inline-flex items-center gap-2 rounded-sm border border-warm-white/30 px-5 py-3.5 font-sans text-[12px] font-semibold uppercase tracking-[0.12em] text-warm-white transition-colors hover:border-warm-white hover:bg-warm-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-ink active:translate-y-px"
           >
             <MessageCircle size={16} />
             WhatsApp
@@ -45,7 +45,7 @@ export function ContactCta() {
             href={siteConfig.instagram.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-sm border border-warm-white/30 px-5 py-3.5 font-sans text-[12px] font-semibold uppercase tracking-[0.12em] text-warm-white"
+            className="inline-flex items-center gap-2 rounded-sm border border-warm-white/30 px-5 py-3.5 font-sans text-[12px] font-semibold uppercase tracking-[0.12em] text-warm-white transition-colors hover:border-warm-white hover:bg-warm-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-ink active:translate-y-px"
           >
             <Instagram size={16} />
             Instagram

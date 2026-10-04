@@ -67,7 +67,7 @@ export function Hero() {
                 priority={index === 0}
                 sizes="100vw"
                 quality={92}
-                className="object-cover"
+                className="hero-drift object-cover motion-reduce:animate-none"
                 style={{ objectPosition: slide.objectPosition }}
               />
             )}
@@ -124,7 +124,7 @@ export function Hero() {
         >
           <Link
             href="/#booking"
-            className={`inline-flex items-center justify-center rounded-sm px-7 py-3.5 font-sans text-[12px] font-semibold uppercase tracking-[0.14em] transition-all duration-300 ${
+            className={`inline-flex items-center justify-center rounded-sm px-7 py-3.5 font-sans text-[12px] font-semibold uppercase tracking-[0.14em] transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 active:translate-y-px motion-reduce:transition-none ${
               light
                 ? "bg-ink text-warm-white hover:bg-ink/90"
                 : "bg-warm-white text-ink hover:bg-warm-cream"
@@ -134,7 +134,7 @@ export function Hero() {
           </Link>
           <Link
             href="/gallery"
-            className={`inline-flex items-center justify-center rounded-sm border bg-transparent px-7 py-3.5 font-sans text-[12px] font-semibold uppercase tracking-[0.14em] transition-all duration-300 ${
+            className={`inline-flex items-center justify-center rounded-sm border bg-transparent px-7 py-3.5 font-sans text-[12px] font-semibold uppercase tracking-[0.14em] transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 active:translate-y-px motion-reduce:transition-none ${
               light
                 ? "border-ink/30 text-ink hover:border-ink hover:bg-ink/5"
                 : "border-warm-white/40 text-warm-white hover:border-warm-white hover:bg-warm-white/10"

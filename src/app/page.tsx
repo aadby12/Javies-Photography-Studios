@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { Hero } from "@/components/Hero";
 import { FeaturedWork } from "@/components/FeaturedWork";
 import { ServicesPreview } from "@/components/ServicesPreview";
@@ -10,7 +11,9 @@ export default function HomePage() {
       <Hero />
       <FeaturedWork />
       <ServicesPreview />
-      <BookingExperience />
+      <Suspense fallback={null}>
+        <BookingExperience />
+      </Suspense>
       <ContactCta />
     </>
   );

@@ -55,7 +55,7 @@ export function ServicesPreview({ fullPage = false }: ServicesPreviewProps) {
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 640px"
                   quality={92}
-                  className="object-cover transition-transform duration-700 ease-premium group-hover:scale-105"
+                  className="object-cover transition-transform duration-700 ease-premium group-hover:scale-[1.02] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/55 via-transparent to-transparent" />
                 <h3 className="absolute bottom-4 left-4 font-display text-2xl font-medium text-warm-white md:text-[1.65rem]">
@@ -67,8 +67,8 @@ export function ServicesPreview({ fullPage = false }: ServicesPreviewProps) {
                   {service.description}
                 </p>
                 <Link
-                  href="/#booking"
-                  className="mt-4 inline-flex items-center gap-1.5 font-sans text-[11px] font-semibold uppercase tracking-[0.14em] text-ink transition-colors hover:text-accent-deep"
+                  href={`/?service=${service.id}#booking`}
+                  className="mt-4 inline-flex items-center gap-1.5 font-sans text-[11px] font-semibold uppercase tracking-[0.14em] text-ink transition-colors hover:text-accent-deep focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
                 >
                   Enquire
                   <ArrowRight size={14} />
