@@ -83,21 +83,46 @@ export function Hero() {
 
       <div className="relative z-[1] min-h-0 w-full flex-1">
         {poster ? (
-          <div className="absolute inset-x-4 top-20 bottom-6 sm:inset-x-10 md:inset-x-16 md:top-24 md:bottom-8">
-            <Image
-              src={slide.src}
-              alt={slide.alt}
-              fill
-              priority
-              sizes="100vw"
-              quality={92}
-              className="object-contain"
-            />
-          </div>
+          <>
+            <div className="absolute inset-x-4 top-20 bottom-6 sm:inset-x-8 md:hidden">
+              <Image
+                src={slide.src}
+                alt={slide.alt}
+                fill
+                priority
+                sizes="100vw"
+                quality={92}
+                className="object-contain"
+                style={{ objectFit: "contain" }}
+              />
+            </div>
+            <div className="absolute inset-x-0 top-14 bottom-0 hidden items-center justify-center md:flex">
+              <Image
+                src={slide.src}
+                alt={slide.alt}
+                width={2400}
+                height={1600}
+                priority
+                sizes="(min-width: 1280px) 1400px, 92vw"
+                quality={92}
+                className="h-auto w-auto max-h-full max-w-[min(92vw,1400px)]"
+                style={{
+                  width: "auto",
+                  height: "auto",
+                  maxWidth: "min(92vw, 1400px)",
+                  maxHeight: "100%",
+                }}
+              />
+            </div>
+          </>
         ) : null}
       </div>
 
-      <div className="relative z-10 mx-auto w-full max-w-7xl shrink-0 px-5 pb-28 md:px-8 md:pb-32 lg:px-10">
+      <div
+        className={`relative z-10 mx-auto w-full max-w-7xl shrink-0 px-5 pb-28 md:px-8 lg:px-10 ${
+          poster ? "md:pb-10" : "md:pb-32"
+        }`}
+      >
         <motion.h1
           initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
