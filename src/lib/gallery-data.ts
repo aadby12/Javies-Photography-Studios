@@ -1478,13 +1478,13 @@ export const galleryItems: GalleryItem[] = [
   },
   {
     "id": "13c9467eeb38",
-    "src": "/images/gallery/maternity-_c7a0049-3dba2a.jpg",
+    "src": "/images/gallery/maternity-c7a0049-full.jpg",
     "alt": "maternity photography by Javies Photography Studio",
     "caption": "Maternity",
     "category": "maternity",
-    "width": 2000,
-    "height": 1497,
-    "ratio": 1.336,
+    "width": 1920,
+    "height": 2400,
+    "ratio": 0.8,
     "includeInAll": true
   },
   {
@@ -1599,13 +1599,13 @@ export const galleryItems: GalleryItem[] = [
   },
   {
     "id": "5d0b2c854eaa",
-    "src": "/images/gallery/maternity-javi3319-d286c8.jpg",
+    "src": "/images/gallery/maternity-javi3319-full.jpg",
     "alt": "maternity photography by Javies Photography Studio",
     "caption": "Maternity",
     "category": "maternity",
-    "width": 2000,
-    "height": 1497,
-    "ratio": 1.336,
+    "width": 1920,
+    "height": 2400,
+    "ratio": 0.8,
     "includeInAll": true
   },
   {
@@ -1665,13 +1665,13 @@ export const galleryItems: GalleryItem[] = [
   },
   {
     "id": "967cb9a2a536",
-    "src": "/images/gallery/maternity-javi6481-eede1c.jpg",
+    "src": "/images/gallery/maternity-javi6481-full.jpg",
     "alt": "maternity photography by Javies Photography Studio",
     "caption": "Maternity",
     "category": "maternity",
-    "width": 2000,
-    "height": 1497,
-    "ratio": 1.336,
+    "width": 1920,
+    "height": 2400,
+    "ratio": 0.8,
     "includeInAll": true
   },
   {
