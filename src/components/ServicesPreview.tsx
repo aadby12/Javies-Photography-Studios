@@ -33,7 +33,7 @@ export function ServicesPreview({ fullPage = false }: ServicesPreviewProps) {
         )}
 
         <div
-          className={`grid items-start gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6 ${fullPage ? "" : "mt-14"}`}
+          className={`grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6 ${fullPage ? "" : "mt-14"}`}
         >
           {items.map((service, index) => (
             <motion.article
@@ -48,15 +48,17 @@ export function ServicesPreview({ fullPage = false }: ServicesPreviewProps) {
               }}
               className="group relative flex flex-col overflow-hidden rounded-sm bg-warm-cream"
             >
-              <Image
-                src={service.image}
-                alt={service.imageAlt}
-                width={service.width}
-                height={service.height}
-                sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 640px"
-                quality={92}
-                className="h-auto w-full"
-              />
+              <div className="overflow-hidden bg-warm-cream">
+                <Image
+                  src={service.image}
+                  alt={service.imageAlt}
+                  width={service.width}
+                  height={service.height}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 640px"
+                  quality={92}
+                  className="h-auto w-full"
+                />
+              </div>
               <div className="flex flex-1 flex-col p-5">
                 <h3 className="font-display text-2xl font-medium text-ink md:text-[1.65rem]">
                   {service.title}

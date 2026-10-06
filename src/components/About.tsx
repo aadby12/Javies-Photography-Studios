@@ -74,8 +74,8 @@ export function About() {
               <Image
                 src={aboutContent.image}
                 alt={aboutContent.imageAlt}
-                width={1920}
-                height={2400}
+                width={aboutContent.width}
+                height={aboutContent.height}
                 sizes="(max-width: 1024px) 100vw, 58vw"
                 quality={92}
                 className="h-auto w-full"

@@ -52,10 +52,10 @@ export const services: {
     id: "maternity",
     title: "Maternity",
     description: "Studio and outdoor maternity sessions.",
-    image: "/images/service-maternity.jpg",
+    image: "/images/service-maternity-full.jpg",
     imageAlt: "Outdoor maternity session by Javies Photography Studio",
     width: 2000,
-    height: 1497,
+    height: 2500,
   },
   {
     id: "newborn",
@@ -136,11 +136,11 @@ export const featuredWork = [
     height: 2400,
   },
   {
-    src: "/images/featured-maternity-outdoor.jpg",
+    src: "/images/featured-maternity-outdoor-full.jpg",
     alt: "Outdoor maternity portrait",
     category: "Maternity",
     width: 2000,
-    height: 1497,
+    height: 2500,
   },
   {
     src: "/images/featured-princess.jpg",
@@ -438,6 +438,8 @@ export const aboutContent = {
   location: "C&G House, Dome Road, Westlands, Accra",
   image: "/images/about-studio.jpg",
   imageAlt: "Traditional studio portrait by Javies Photography Studio",
+  width: 1920,
+  height: 2400,
 };
 
 export const heroSlides = [

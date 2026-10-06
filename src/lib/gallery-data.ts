@@ -1482,8 +1482,8 @@ export const galleryItems: GalleryItem[] = [
     "alt": "maternity photography by Javies Photography Studio",
     "caption": "Maternity",
     "category": "maternity",
-    "width": 1920,
-    "height": 2400,
+    "width": 2000,
+    "height": 2500,
     "ratio": 0.8,
     "includeInAll": true
   },
@@ -1603,8 +1603,8 @@ export const galleryItems: GalleryItem[] = [
     "alt": "maternity photography by Javies Photography Studio",
     "caption": "Maternity",
     "category": "maternity",
-    "width": 1920,
-    "height": 2400,
+    "width": 2000,
+    "height": 2500,
     "ratio": 0.8,
     "includeInAll": true
   },
@@ -1669,9 +1669,9 @@ export const galleryItems: GalleryItem[] = [
     "alt": "maternity photography by Javies Photography Studio",
     "caption": "Maternity",
     "category": "maternity",
-    "width": 1920,
-    "height": 2400,
-    "ratio": 0.8,
+    "width": 2400,
+    "height": 2999,
+    "ratio": 0.8003,
     "includeInAll": true
   },
   {
