@@ -43,73 +43,76 @@ export function Hero() {
 
   return (
     <section
-      className={`relative flex h-[100svh] min-h-[640px] w-full flex-col overflow-hidden ${
-        light ? "bg-white" : "bg-ink"
-      }`}
+      className="relative flex h-[100svh] min-h-[640px] w-full flex-col overflow-hidden"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       aria-roledescription="carousel"
       aria-label="Studio photography"
     >
-      <div className="relative z-[1] min-h-0 w-full flex-1">
+      <div className="absolute inset-0">
         <AnimatePresence initial={false}>
           <motion.div
             key={slide.src}
-            className="absolute inset-0"
+            className={`absolute inset-0 ${poster ? (light ? "bg-white" : "bg-black") : "bg-ink"}`}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 1.05, ease: [0.22, 1, 0.36, 1] }}
           >
-            {poster ? (
-              <>
-                <div className="absolute inset-x-4 top-20 bottom-6 sm:inset-x-8 md:hidden">
-                  <Image
-                    src={slide.src}
-                    alt={slide.alt}
-                    fill
-                    priority={index === 0}
-                    sizes="100vw"
-                    quality={92}
-                    className="object-contain"
-                    style={{ objectFit: "contain" }}
-                  />
-                </div>
-                <div className="absolute inset-x-0 top-14 bottom-0 hidden items-center justify-center md:flex">
-                  <Image
-                    src={slide.src}
-                    alt={slide.alt}
-                    width={2400}
-                    height={1600}
-                    priority={index === 0}
-                    sizes="(min-width: 1280px) 1400px, 92vw"
-                    quality={92}
-                    className="h-auto w-auto max-h-full max-w-[min(92vw,1400px)]"
-                    style={{
-                      width: "auto",
-                      height: "auto",
-                      maxWidth: "min(92vw, 1400px)",
-                      maxHeight: "100%",
-                    }}
-                  />
-                </div>
-              </>
-            ) : (
-              <div className="absolute inset-x-4 top-20 bottom-3 sm:inset-x-8 md:inset-x-14">
-                <Image
-                  src={slide.src}
-                  alt={slide.alt}
-                  fill
-                  priority={index === 0}
-                  sizes="100vw"
-                  quality={92}
-                  className="object-contain"
-                  style={{ objectFit: "contain", objectPosition: "center center" }}
-                />
-              </div>
+            {poster ? null : (
+              <Image
+                src={slide.src}
+                alt={slide.alt}
+                fill
+                priority={index === 0}
+                sizes="100vw"
+                quality={92}
+                className="object-contain"
+                style={{ objectFit: "contain", objectPosition: slide.objectPosition }}
+              />
             )}
           </motion.div>
         </AnimatePresence>
+        {poster ? null : (
+          <div className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-ink/80 to-transparent" />
+        )}
+      </div>
+
+      <div className="relative z-[1] min-h-0 w-full flex-1">
+        {poster ? (
+          <>
+            <div className="absolute inset-x-4 top-20 bottom-6 sm:inset-x-8 md:hidden">
+              <Image
+                src={slide.src}
+                alt={slide.alt}
+                fill
+                priority
+                sizes="100vw"
+                quality={92}
+                className="object-contain"
+                style={{ objectFit: "contain" }}
+              />
+            </div>
+            <div className="absolute inset-x-0 top-14 bottom-0 hidden items-center justify-center md:flex">
+              <Image
+                src={slide.src}
+                alt={slide.alt}
+                width={2400}
+                height={1600}
+                priority
+                sizes="(min-width: 1280px) 1400px, 92vw"
+                quality={92}
+                className="h-auto w-auto max-h-full max-w-[min(92vw,1400px)]"
+                style={{
+                  width: "auto",
+                  height: "auto",
+                  maxWidth: "min(92vw, 1400px)",
+                  maxHeight: "100%",
+                }}
+              />
+            </div>
+          </>
+        ) : null}
       </div>
 
       <div

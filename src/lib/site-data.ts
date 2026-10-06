@@ -451,7 +451,7 @@ export const heroSlides = [
     id: "maternity",
     src: "/images/hero/maternity.jpg",
     alt: "Maternity studio session in pink by Javies Photography Studio",
-    objectPosition: "center center",
+    objectPosition: "center 35%",
   },
   {
     id: "prints",
