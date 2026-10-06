@@ -53,7 +53,7 @@ export function Hero() {
         <AnimatePresence initial={false}>
           <motion.div
             key={slide.src}
-            className={`absolute inset-0 ${poster ? (light ? "bg-white" : "bg-black") : ""}`}
+            className={`absolute inset-0 ${poster ? (light ? "bg-white" : "bg-black") : "bg-ink"}`}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -67,17 +67,14 @@ export function Hero() {
                 priority={index === 0}
                 sizes="100vw"
                 quality={92}
-                className="hero-drift object-cover motion-reduce:animate-none"
-                style={{ objectPosition: slide.objectPosition }}
+                className="object-contain"
+                style={{ objectFit: "contain", objectPosition: slide.objectPosition }}
               />
             )}
           </motion.div>
         </AnimatePresence>
         {poster ? null : (
-          <>
-            <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/40 to-ink/30" />
-            <div className="absolute inset-0 bg-gradient-to-r from-ink/45 via-transparent to-transparent" />
-          </>
+          <div className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-ink/80 to-transparent" />
         )}
       </div>
 

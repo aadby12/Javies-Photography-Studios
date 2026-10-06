@@ -38,11 +38,11 @@ export function FeaturedWork() {
                 <Image
                   src={item.src}
                   alt={item.alt}
-                  width={900}
-                  height={1200}
+                  width={item.width}
+                  height={item.height}
                   sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 640px"
                   quality={92}
-                  className="h-auto w-full transition-transform duration-700 ease-premium group-hover:scale-[1.02] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+                  className="h-auto w-full"
                 />
                 <div className="pointer-events-none absolute inset-0 bg-ink/0 transition-colors duration-400 group-hover:bg-ink/15" />
                 <figcaption className="absolute inset-x-0 bottom-0 p-4 opacity-0 transition-opacity duration-400 group-hover:opacity-100">

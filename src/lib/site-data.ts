@@ -45,6 +45,8 @@ export const services: {
   description: string;
   image: string;
   imageAlt: string;
+  width: number;
+  height: number;
 }[] = [
   {
     id: "maternity",
@@ -52,6 +54,8 @@ export const services: {
     description: "Studio and outdoor maternity sessions.",
     image: "/images/service-maternity.jpg",
     imageAlt: "Outdoor maternity session by Javies Photography Studio",
+    width: 2000,
+    height: 1497,
   },
   {
     id: "newborn",
@@ -59,6 +63,8 @@ export const services: {
     description: "Gentle newborn and baby sessions.",
     image: "/images/service-newborn.jpg",
     imageAlt: "Newborn baby portrait by Javies Photography Studio",
+    width: 1920,
+    height: 2400,
   },
   {
     id: "milestone",
@@ -66,6 +72,8 @@ export const services: {
     description: "Birthday and kids milestone sessions.",
     image: "/images/service-milestone.jpg",
     imageAlt: "Jungle-themed second birthday session by Javies Photography Studio",
+    width: 1920,
+    height: 2400,
   },
   {
     id: "family",
@@ -73,6 +81,8 @@ export const services: {
     description: "Family portraits in studio.",
     image: "/images/service-family-nursery.jpg",
     imageAlt: "Parents with their baby during a family studio session by Javies Photography Studio",
+    width: 1919,
+    height: 2400,
   },
   {
     id: "traditional",
@@ -80,6 +90,8 @@ export const services: {
     description: "Cultural and traditional attire sessions.",
     image: "/images/service-traditional.jpg",
     imageAlt: "Traditional attire portrait by Javies Photography Studio",
+    width: 1920,
+    height: 2400,
   },
   {
     id: "portrait",
@@ -87,6 +99,8 @@ export const services: {
     description: "Individual and couple portraits.",
     image: "/images/service-portrait.jpg",
     imageAlt: "Couple portrait by Javies Photography Studio",
+    width: 2000,
+    height: 1497,
   },
   {
     id: "christmas",
@@ -94,6 +108,8 @@ export const services: {
     description: "Festive seasonal family sessions.",
     image: "/images/service-christmas.jpg",
     imageAlt: "Christmas studio session by Javies Photography Studio",
+    width: 2000,
+    height: 1497,
   },
 ];
 
@@ -102,61 +118,85 @@ export const featuredWork = [
     src: "/images/featured-traditional-kente.jpg",
     alt: "Mother and child in traditional kente",
     category: "Traditional",
+    width: 1920,
+    height: 2400,
   },
   {
     src: "/images/featured-twins-kente.jpg",
     alt: "Twin girls in traditional attire",
     category: "Milestone",
+    width: 1920,
+    height: 2400,
   },
   {
     src: "/images/featured-newborn.jpg",
     alt: "Sleeping newborn portrait",
     category: "Newborn",
+    width: 1807,
+    height: 2400,
   },
   {
     src: "/images/featured-maternity-outdoor.jpg",
     alt: "Outdoor maternity portrait",
     category: "Maternity",
+    width: 2000,
+    height: 1497,
   },
   {
     src: "/images/featured-princess.jpg",
     alt: "Girl in traditional kente and crown",
     category: "Traditional",
+    width: 1807,
+    height: 2400,
   },
   {
     src: "/images/featured-milestone-5.jpg",
     alt: "Fifth birthday studio session",
     category: "Milestone",
+    width: 1920,
+    height: 2400,
   },
   {
     src: "/images/featured-twins-newborn.jpg",
     alt: "Newborn twins session",
     category: "Newborn",
+    width: 1919,
+    height: 2400,
   },
   {
     src: "/images/featured-milestone-baffour.jpg",
     alt: "First birthday traditional milestone",
     category: "Milestone",
+    width: 1920,
+    height: 2400,
   },
   {
     src: "/images/featured-maternity-couple.jpg",
     alt: "Maternity couple portrait",
     category: "Maternity",
+    width: 2000,
+    height: 1497,
   },
   {
     src: "/images/featured-traditional-jeslyn.jpg",
     alt: "Traditional attire portrait",
     category: "Traditional",
+    width: 1920,
+    height: 2400,
   },
   {
     src: "/images/featured-newborn-naseda.jpg",
     alt: "Styled baby studio portrait",
     category: "Newborn",
+    width: 2000,
+    height: 1600,
   },
   {
     src: "/images/featured-milestone-bedrich.jpg",
     alt: "Kids birthday milestone session",
     category: "Milestone",
+    width: 1921,
+    height: 2400,
   },
 ];
 

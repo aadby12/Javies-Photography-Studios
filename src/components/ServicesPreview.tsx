@@ -33,7 +33,7 @@ export function ServicesPreview({ fullPage = false }: ServicesPreviewProps) {
         )}
 
         <div
-          className={`grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6 ${fullPage ? "" : "mt-14"}`}
+          className={`grid items-start gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6 ${fullPage ? "" : "mt-14"}`}
         >
           {items.map((service, index) => (
             <motion.article
@@ -48,22 +48,20 @@ export function ServicesPreview({ fullPage = false }: ServicesPreviewProps) {
               }}
               className="group relative flex flex-col overflow-hidden rounded-sm bg-warm-cream"
             >
-              <div className="relative aspect-[4/5] overflow-hidden">
-                <Image
-                  src={service.image}
-                  alt={service.imageAlt}
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 640px"
-                  quality={92}
-                  className="object-cover transition-transform duration-700 ease-premium group-hover:scale-[1.02] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-ink/55 via-transparent to-transparent" />
-                <h3 className="absolute bottom-4 left-4 font-display text-2xl font-medium text-warm-white md:text-[1.65rem]">
+              <Image
+                src={service.image}
+                alt={service.imageAlt}
+                width={service.width}
+                height={service.height}
+                sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 640px"
+                quality={92}
+                className="h-auto w-full"
+              />
+              <div className="flex flex-1 flex-col p-5">
+                <h3 className="font-display text-2xl font-medium text-ink md:text-[1.65rem]">
                   {service.title}
                 </h3>
-              </div>
-              <div className="flex flex-1 flex-col p-5">
-                <p className="flex-1 font-sans text-sm leading-relaxed text-ink-muted">
+                <p className="mt-2 flex-1 font-sans text-sm leading-relaxed text-ink-muted">
                   {service.description}
                 </p>
                 <Link
