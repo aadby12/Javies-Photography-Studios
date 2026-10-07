@@ -16,7 +16,7 @@ export function JsonLd() {
       addressLocality: siteConfig.address.city,
       addressCountry: "GH",
     },
-    sameAs: [siteConfig.instagram.url],
+    sameAs: [siteConfig.instagram.url, siteConfig.youtube.url],
     areaServed: {
       "@type": "City",
       name: "Accra",

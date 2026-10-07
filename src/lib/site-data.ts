@@ -18,6 +18,11 @@ export const siteConfig = {
     handle: "@javiesphotography_studios",
     url: "https://www.instagram.com/javiesphotography_studios/",
   },
+  youtube: {
+    url: "https://www.youtube.com/@javiesstudios/videos",
+    videoId: "oHrCNndSOdg",
+    title: "Another project wrapped for Kelele clothing.",
+  },
   mapsUrl:
     "https://www.google.com/maps/search/?api=1&query=C%26G+House+Dome+Road+Westlands+Accra",
   url: "https://javies-photography-studios.vercel.app",
