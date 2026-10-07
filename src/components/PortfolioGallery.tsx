@@ -148,6 +148,10 @@ export function PortfolioGallery({
           </div>
         </div>
 
+        {active === "event" && filtered.length === 0 && (
+          <p className="mt-16 font-sans text-sm text-ink-muted">Event photographs will be added soon.</p>
+        )}
+
         {/* Masonry grid — natural aspect, no forced crops */}
         <div className="mt-10 columns-1 gap-3 sm:columns-2 sm:gap-4 lg:columns-3 lg:gap-5">
           <AnimatePresence mode="popLayout">

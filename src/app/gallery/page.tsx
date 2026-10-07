@@ -5,7 +5,7 @@ import { PortfolioGallery } from "@/components/PortfolioGallery";
 export const metadata: Metadata = {
   title: "Gallery",
   description:
-    "Photography gallery — maternity, newborn, milestone, family and traditional sessions by Javies Photography Studio, Accra.",
+    "Photography gallery — maternity, newborn, milestone, family and event sessions by Javies Photography Studio, Accra.",
 };
 
 type GalleryPageProps = {

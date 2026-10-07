@@ -5,7 +5,7 @@ export type GalleryCategory =
   | "newborn"
   | "milestone"
   | "family"
-  | "traditional"
+  | "event"
   | "christmas"
   | "portrait";
 
@@ -47,8 +47,8 @@ export const galleryCategories: { id: GalleryCategory; label: string }[] = [
     "label": "Portrait"
   },
   {
-    "id": "traditional",
-    "label": "Traditional"
+    "id": "event",
+    "label": "Event"
   },
   {
     "id": "christmas",
@@ -135,6 +135,17 @@ export const galleryItems: GalleryItem[] = [
     "includeInAll": true
   },
   {
+    "id": "42987f68f2a4",
+    "src": "/images/gallery/traditional-adi@3-(5)-20d1fa.jpg",
+    "alt": "milestone photography by Javies Photography Studio",
+    "caption": "Milestone",
+    "category": "milestone",
+    "width": 1806,
+    "height": 2400,
+    "ratio": 0.7525,
+    "includeInAll": true
+  },
+  {
     "id": "d29f9ccedd01",
     "src": "/images/gallery/milestone-244a2399-d819d9.jpg",
     "alt": "milestone photography by Javies Photography Studio",
@@ -209,6 +220,17 @@ export const galleryItems: GalleryItem[] = [
     "width": 2000,
     "height": 1505,
     "ratio": 1.3289,
+    "includeInAll": true
+  },
+  {
+    "id": "e38b0a116960",
+    "src": "/images/gallery/traditional-aileen@1-(30)-6113ce.jpg",
+    "alt": "milestone photography by Javies Photography Studio",
+    "caption": "Milestone",
+    "category": "milestone",
+    "width": 1920,
+    "height": 2400,
+    "ratio": 0.8,
     "includeInAll": true
   },
   {
@@ -289,6 +311,17 @@ export const galleryItems: GalleryItem[] = [
     "includeInAll": true
   },
   {
+    "id": "4d2c6cedb0fc",
+    "src": "/images/gallery/traditional-awurayaa-(3)-6d206b.jpg",
+    "alt": "milestone photography by Javies Photography Studio",
+    "caption": "Milestone",
+    "category": "milestone",
+    "width": 1920,
+    "height": 2400,
+    "ratio": 0.8,
+    "includeInAll": true
+  },
+  {
     "id": "7e03d350c4d9",
     "src": "/images/gallery/milestone-arielle-and-brielle@1-(1)-89d75d.jpg",
     "alt": "milestone photography by Javies Photography Studio",
@@ -366,6 +399,17 @@ export const galleryItems: GalleryItem[] = [
     "includeInAll": true
   },
   {
+    "id": "fb63a0e2b591",
+    "src": "/images/gallery/traditional-barimaba@1-(18)-afeb58.jpg",
+    "alt": "milestone photography by Javies Photography Studio",
+    "caption": "Milestone",
+    "category": "milestone",
+    "width": 1919,
+    "height": 2400,
+    "ratio": 0.7996,
+    "includeInAll": true
+  },
+  {
     "id": "fcac629dc1d4",
     "src": "/images/gallery/milestone-baake@1-(7)-5ad9df.jpg",
     "alt": "milestone photography by Javies Photography Studio",
@@ -434,6 +478,17 @@ export const galleryItems: GalleryItem[] = [
   {
     "id": "ce4b9fe3755e",
     "src": "/images/gallery/milestone-brianna@1-(4)-ce4b9f.jpg",
+    "alt": "milestone photography by Javies Photography Studio",
+    "caption": "Milestone",
+    "category": "milestone",
+    "width": 1920,
+    "height": 2400,
+    "ratio": 0.8,
+    "includeInAll": true
+  },
+  {
+    "id": "74d5f4e02357",
+    "src": "/images/gallery/traditional-bohyeba@1-(10)-9393ff.jpg",
     "alt": "milestone photography by Javies Photography Studio",
     "caption": "Milestone",
     "category": "milestone",
@@ -520,6 +575,17 @@ export const galleryItems: GalleryItem[] = [
     "includeInAll": true
   },
   {
+    "id": "1618b6c5aa6a",
+    "src": "/images/gallery/traditional-javi7118-61d1a4.jpg",
+    "alt": "milestone photography by Javies Photography Studio",
+    "caption": "Milestone",
+    "category": "milestone",
+    "width": 1080,
+    "height": 1350,
+    "ratio": 0.8,
+    "includeInAll": true
+  },
+  {
     "id": "7f633fd966e9",
     "src": "/images/gallery/milestone-faisal@5-(9)-7f633f.jpg",
     "alt": "milestone photography by Javies Photography Studio",
@@ -588,6 +654,17 @@ export const galleryItems: GalleryItem[] = [
   {
     "id": "20fd8b4e5c69",
     "src": "/images/gallery/milestone-jathniel@1-(2)-20fd8b.jpg",
+    "alt": "milestone photography by Javies Photography Studio",
+    "caption": "Milestone",
+    "category": "milestone",
+    "width": 1920,
+    "height": 2400,
+    "ratio": 0.8,
+    "includeInAll": true
+  },
+  {
+    "id": "c9ce85cc3b24",
+    "src": "/images/gallery/traditional-jeslyn@1-(8)-9a4854.jpg",
     "alt": "milestone photography by Javies Photography Studio",
     "caption": "Milestone",
     "category": "milestone",
@@ -674,6 +751,17 @@ export const galleryItems: GalleryItem[] = [
     "includeInAll": true
   },
   {
+    "id": "2785ef4b1798",
+    "src": "/images/gallery/traditional-jpsi9934-(2)-d93c2d.jpg",
+    "alt": "milestone photography by Javies Photography Studio",
+    "caption": "Milestone",
+    "category": "milestone",
+    "width": 1806,
+    "height": 2400,
+    "ratio": 0.7525,
+    "includeInAll": true
+  },
+  {
     "id": "63330fe32d70",
     "src": "/images/gallery/milestone-jezreel@1-(16)-63330f.jpg",
     "alt": "milestone photography by Javies Photography Studio",
@@ -742,6 +830,17 @@ export const galleryItems: GalleryItem[] = [
   {
     "id": "55b53af626c3",
     "src": "/images/gallery/milestone-lilybeth@3ms-(24)-55b53a.jpg",
+    "alt": "milestone photography by Javies Photography Studio",
+    "caption": "Milestone",
+    "category": "milestone",
+    "width": 1920,
+    "height": 2400,
+    "ratio": 0.8,
+    "includeInAll": true
+  },
+  {
+    "id": "4994c45e2c59",
+    "src": "/images/gallery/traditional-nana-kwame-and-ama-(11)-80b9df.jpg",
     "alt": "milestone photography by Javies Photography Studio",
     "caption": "Milestone",
     "category": "milestone",
@@ -828,6 +927,17 @@ export const galleryItems: GalleryItem[] = [
     "includeInAll": true
   },
   {
+    "id": "ee7a2bdef38e",
+    "src": "/images/gallery/traditional-ngwu@1-(15)-edf119.jpg",
+    "alt": "milestone photography by Javies Photography Studio",
+    "caption": "Milestone",
+    "category": "milestone",
+    "width": 2000,
+    "height": 1600,
+    "ratio": 1.25,
+    "includeInAll": true
+  },
+  {
     "id": "6d517775301b",
     "src": "/images/gallery/milestone-nana-ama@4-(3)-6d5177.jpg",
     "alt": "milestone photography by Javies Photography Studio",
@@ -896,6 +1006,17 @@ export const galleryItems: GalleryItem[] = [
   {
     "id": "59a11800e20a",
     "src": "/images/gallery/milestone-ob@2-(3)-59a118.jpg",
+    "alt": "milestone photography by Javies Photography Studio",
+    "caption": "Milestone",
+    "category": "milestone",
+    "width": 1920,
+    "height": 2400,
+    "ratio": 0.8,
+    "includeInAll": true
+  },
+  {
+    "id": "72bc4f6ed5be",
+    "src": "/images/gallery/traditional-ortopah@1-(6)-8d4acd.jpg",
     "alt": "milestone photography by Javies Photography Studio",
     "caption": "Milestone",
     "category": "milestone",
@@ -982,6 +1103,17 @@ export const galleryItems: GalleryItem[] = [
     "includeInAll": true
   },
   {
+    "id": "2dca64716b3b",
+    "src": "/images/gallery/traditional-princess@5-(8)-56d49a.jpg",
+    "alt": "milestone photography by Javies Photography Studio",
+    "caption": "Milestone",
+    "category": "milestone",
+    "width": 1920,
+    "height": 2400,
+    "ratio": 0.8,
+    "includeInAll": true
+  },
+  {
     "id": "25da4bd4055b",
     "src": "/images/gallery/milestone-reyham@2-(9)-25da4b.jpg",
     "alt": "milestone photography by Javies Photography Studio",
@@ -1050,6 +1182,17 @@ export const galleryItems: GalleryItem[] = [
   {
     "id": "814f4b8a7927",
     "src": "/images/gallery/milestone-sika@2-(15)-814f4b.jpg",
+    "alt": "milestone photography by Javies Photography Studio",
+    "caption": "Milestone",
+    "category": "milestone",
+    "width": 1920,
+    "height": 2400,
+    "ratio": 0.8,
+    "includeInAll": true
+  },
+  {
+    "id": "d46d137d933e",
+    "src": "/images/gallery/traditional-sewaa@10-(11)-1eb1e6.jpg",
     "alt": "milestone photography by Javies Photography Studio",
     "caption": "Milestone",
     "category": "milestone",
@@ -1977,149 +2120,6 @@ export const galleryItems: GalleryItem[] = [
     "alt": "portrait photography by Javies Photography Studio",
     "caption": "Portrait",
     "category": "portrait",
-    "width": 1920,
-    "height": 2400,
-    "ratio": 0.8,
-    "includeInAll": true
-  },
-  {
-    "id": "42987f68f2a4",
-    "src": "/images/gallery/traditional-adi@3-(5)-20d1fa.jpg",
-    "alt": "traditional photography by Javies Photography Studio",
-    "caption": "Traditional",
-    "category": "traditional",
-    "width": 1806,
-    "height": 2400,
-    "ratio": 0.7525,
-    "includeInAll": true
-  },
-  {
-    "id": "e38b0a116960",
-    "src": "/images/gallery/traditional-aileen@1-(30)-6113ce.jpg",
-    "alt": "traditional photography by Javies Photography Studio",
-    "caption": "Traditional",
-    "category": "traditional",
-    "width": 1920,
-    "height": 2400,
-    "ratio": 0.8,
-    "includeInAll": true
-  },
-  {
-    "id": "4d2c6cedb0fc",
-    "src": "/images/gallery/traditional-awurayaa-(3)-6d206b.jpg",
-    "alt": "traditional photography by Javies Photography Studio",
-    "caption": "Traditional",
-    "category": "traditional",
-    "width": 1920,
-    "height": 2400,
-    "ratio": 0.8,
-    "includeInAll": true
-  },
-  {
-    "id": "fb63a0e2b591",
-    "src": "/images/gallery/traditional-barimaba@1-(18)-afeb58.jpg",
-    "alt": "traditional photography by Javies Photography Studio",
-    "caption": "Traditional",
-    "category": "traditional",
-    "width": 1919,
-    "height": 2400,
-    "ratio": 0.7996,
-    "includeInAll": true
-  },
-  {
-    "id": "74d5f4e02357",
-    "src": "/images/gallery/traditional-bohyeba@1-(10)-9393ff.jpg",
-    "alt": "traditional photography by Javies Photography Studio",
-    "caption": "Traditional",
-    "category": "traditional",
-    "width": 1920,
-    "height": 2400,
-    "ratio": 0.8,
-    "includeInAll": true
-  },
-  {
-    "id": "1618b6c5aa6a",
-    "src": "/images/gallery/traditional-javi7118-61d1a4.jpg",
-    "alt": "traditional photography by Javies Photography Studio",
-    "caption": "Traditional",
-    "category": "traditional",
-    "width": 1080,
-    "height": 1350,
-    "ratio": 0.8,
-    "includeInAll": true
-  },
-  {
-    "id": "c9ce85cc3b24",
-    "src": "/images/gallery/traditional-jeslyn@1-(8)-9a4854.jpg",
-    "alt": "traditional photography by Javies Photography Studio",
-    "caption": "Traditional",
-    "category": "traditional",
-    "width": 1920,
-    "height": 2400,
-    "ratio": 0.8,
-    "includeInAll": true
-  },
-  {
-    "id": "2785ef4b1798",
-    "src": "/images/gallery/traditional-jpsi9934-(2)-d93c2d.jpg",
-    "alt": "traditional photography by Javies Photography Studio",
-    "caption": "Traditional",
-    "category": "traditional",
-    "width": 1806,
-    "height": 2400,
-    "ratio": 0.7525,
-    "includeInAll": true
-  },
-  {
-    "id": "4994c45e2c59",
-    "src": "/images/gallery/traditional-nana-kwame-and-ama-(11)-80b9df.jpg",
-    "alt": "traditional photography by Javies Photography Studio",
-    "caption": "Traditional",
-    "category": "traditional",
-    "width": 1920,
-    "height": 2400,
-    "ratio": 0.8,
-    "includeInAll": true
-  },
-  {
-    "id": "ee7a2bdef38e",
-    "src": "/images/gallery/traditional-ngwu@1-(15)-edf119.jpg",
-    "alt": "traditional photography by Javies Photography Studio",
-    "caption": "Traditional",
-    "category": "traditional",
-    "width": 2000,
-    "height": 1600,
-    "ratio": 1.25,
-    "includeInAll": true
-  },
-  {
-    "id": "72bc4f6ed5be",
-    "src": "/images/gallery/traditional-ortopah@1-(6)-8d4acd.jpg",
-    "alt": "traditional photography by Javies Photography Studio",
-    "caption": "Traditional",
-    "category": "traditional",
-    "width": 1920,
-    "height": 2400,
-    "ratio": 0.8,
-    "includeInAll": true
-  },
-  {
-    "id": "2dca64716b3b",
-    "src": "/images/gallery/traditional-princess@5-(8)-56d49a.jpg",
-    "alt": "traditional photography by Javies Photography Studio",
-    "caption": "Traditional",
-    "category": "traditional",
-    "width": 1920,
-    "height": 2400,
-    "ratio": 0.8,
-    "includeInAll": true
-  },
-  {
-    "id": "d46d137d933e",
-    "src": "/images/gallery/traditional-sewaa@10-(11)-1eb1e6.jpg",
-    "alt": "traditional photography by Javies Photography Studio",
-    "caption": "Traditional",
-    "category": "traditional",
     "width": 1920,
     "height": 2400,
     "ratio": 0.8,
