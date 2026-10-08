@@ -6,7 +6,7 @@ import { Packages } from "@/components/Packages";
 export const metadata: Metadata = {
   title: "Services & Packages",
   description:
-    "Maternity, newborn, milestone, family, traditional and portrait photography packages at Javies Photography Studio, Accra.",
+    "Maternity, newborn, milestone, family, events and portrait photography packages at Javies Photography Studio, Accra.",
 };
 
 export default function ServicesPage() {

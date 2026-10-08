@@ -17,13 +17,10 @@ export function About() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <p className="mb-3 font-sans text-[11px] font-medium uppercase tracking-[0.24em] text-accent-deep">
+              <h1 className="mb-5 font-sans text-[11px] font-medium uppercase tracking-[0.24em] text-accent-deep">
                 About
-              </p>
-              <h1 className="font-display text-display-md font-medium text-ink">
-                {aboutContent.title}
               </h1>
-              <p className="mt-5 font-sans text-base font-light leading-relaxed text-ink-muted">
+              <p className="font-sans text-base font-light leading-relaxed text-ink-muted">
                 {aboutContent.lead}
               </p>
               <a

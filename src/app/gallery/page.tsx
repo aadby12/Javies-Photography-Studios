@@ -17,7 +17,7 @@ export default async function GalleryPage({ searchParams }: GalleryPageProps) {
 
   return (
     <>
-      <PageHero eyebrow="Gallery" title="Our work" />
+      <PageHero eyebrow="Gallery" />
       <PortfolioGallery showHeading={false} initialCategory={category} />
     </>
   );

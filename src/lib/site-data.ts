@@ -40,7 +40,7 @@ export type ServiceId =
   | "newborn"
   | "milestone"
   | "family"
-  | "traditional"
+  | "events"
   | "portrait"
   | "christmas";
 
@@ -57,28 +57,28 @@ export const services: {
     id: "maternity",
     title: "Maternity",
     description: "Studio and outdoor maternity sessions.",
-    image: "/images/service-maternity-full.jpg",
-    imageAlt: "Outdoor maternity session by Javies Photography Studio",
-    width: 2000,
-    height: 2500,
+    image: "/images/service-maternity-studio.jpg",
+    imageAlt: "Maternity studio portrait by Javies Photography Studio",
+    width: 819,
+    height: 1024,
   },
   {
     id: "newborn",
     title: "Newborn",
     description: "Gentle newborn and baby sessions.",
-    image: "/images/service-newborn.jpg",
-    imageAlt: "Newborn baby portrait by Javies Photography Studio",
-    width: 1920,
-    height: 2400,
+    image: "/images/service-newborn-mustard.jpg",
+    imageAlt: "Sleeping newborn wrapped in mustard fabric by Javies Photography Studio",
+    width: 819,
+    height: 1024,
   },
   {
     id: "milestone",
     title: "Milestone",
     description: "Birthday and kids milestone sessions.",
-    image: "/images/service-milestone.jpg",
-    imageAlt: "Jungle-themed second birthday session by Javies Photography Studio",
-    width: 1920,
-    height: 2400,
+    image: "/images/service-milestone-ethan.jpg",
+    imageAlt: "Six-month cake smash session by Javies Photography Studio",
+    width: 1024,
+    height: 770,
   },
   {
     id: "family",
@@ -90,31 +90,31 @@ export const services: {
     height: 2400,
   },
   {
-    id: "traditional",
-    title: "Traditional",
-    description: "Cultural and traditional attire sessions.",
-    image: "/images/service-traditional.jpg",
-    imageAlt: "Traditional attire portrait by Javies Photography Studio",
-    width: 1920,
-    height: 2400,
+    id: "events",
+    title: "Events",
+    description: "Naming ceremonies and kids’ birthday parties.",
+    image: "/images/service-events.jpg",
+    imageAlt: "Child at a Javies Kids event by Javies Photography Studio",
+    width: 819,
+    height: 1024,
   },
   {
     id: "portrait",
     title: "Portrait",
     description: "Individual and couple portraits.",
-    image: "/images/service-portrait.jpg",
+    image: "/images/service-portrait-full.jpg",
     imageAlt: "Couple portrait by Javies Photography Studio",
     width: 2000,
-    height: 1497,
+    height: 2500,
   },
   {
     id: "christmas",
     title: "Christmas",
     description: "Festive seasonal family sessions.",
-    image: "/images/service-christmas.jpg",
-    imageAlt: "Christmas studio session by Javies Photography Studio",
-    width: 2000,
-    height: 1497,
+    image: "/images/service-christmas-family.jpg",
+    imageAlt: "Christmas family studio session by Javies Photography Studio",
+    width: 819,
+    height: 1024,
   },
 ];
 
@@ -432,7 +432,7 @@ export const bookingServices = [
   { id: "newborn", label: "Newborn" },
   { id: "milestone", label: "Milestone" },
   { id: "family", label: "Family" },
-  { id: "traditional", label: "Traditional" },
+  { id: "events", label: "Events" },
   { id: "portrait", label: "Portrait" },
   { id: "christmas", label: "Christmas" },
 ] as const;

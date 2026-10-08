@@ -13,8 +13,7 @@ export function Packages() {
         </p>
         <h2 className="font-display text-display-md font-medium text-ink">Sessions & packages</h2>
         <p className="mt-3 max-w-xl font-sans text-sm text-ink-muted">
-          Prices are in Ghana cedis. Maternity, traditional, and Christmas sessions are quoted when
-          you enquire.
+          Prices are in Ghana cedis. Maternity and Christmas sessions are quoted when you enquire.
         </p>
 
         <div className="mt-14 space-y-16">
