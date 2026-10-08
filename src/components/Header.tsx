@@ -52,11 +52,13 @@ export function Header() {
       <header
         className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-premium ${
           solid
-            ? "bg-warm-white/95 backdrop-blur-md border-b border-warm-beige/60"
-            : "bg-transparent"
+            ? "border-b border-warm-beige/60 bg-warm-white/95 backdrop-blur-md"
+            : inkNav
+              ? "bg-transparent"
+              : "bg-gradient-to-b from-ink/80 via-ink/40 to-transparent"
         }`}
       >
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8 lg:px-10">
+        <div className="mx-auto flex max-w-7xl items-start justify-between px-5 py-3 md:px-8 lg:px-10">
           <Link
             href="/"
             aria-label="Javies Photography Studios"
@@ -66,14 +68,14 @@ export function Header() {
             <Logo tone={inkNav ? "ink" : "light"} />
           </Link>
 
-          <nav className="hidden items-center gap-8 lg:flex">
+          <nav className="hidden items-center gap-8 pt-2 lg:flex">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 aria-current={pathname === link.href ? "page" : undefined}
                 className={`font-sans text-[13px] font-medium tracking-wide transition-colors duration-300 hover:text-accent-deep focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 ${
-                  inkNav ? "text-ink-muted" : "text-warm-white/85"
+                  inkNav ? "text-ink-muted" : "text-warm-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.65)]"
                 } ${
                   pathname === link.href
                     ? inkNav
@@ -87,7 +89,7 @@ export function Header() {
             ))}
           </nav>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 pt-1">
             <button
               type="button"
               aria-label={open ? "Close menu" : "Open menu"}

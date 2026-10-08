@@ -5,7 +5,7 @@ type LogoProps = {
 };
 
 export function Logo({ tone = "ink" }: LogoProps) {
-  const sub = tone === "light" ? "text-warm-white/75" : "text-ink-faint";
+  const sub = tone === "light" ? "text-warm-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.55)]" : "text-ink-faint";
 
   return (
     <span className="inline-grid grid-cols-[auto_auto] items-start leading-none">
