@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, Instagram } from "lucide-react";
@@ -58,16 +59,25 @@ export function Header() {
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8 lg:px-10">
           <Link
             href="/"
-            className="group relative z-10 flex items-center gap-2.5"
+            aria-label="Javies Photography Studios"
+            className="group relative z-10 flex items-center gap-1.5"
             onClick={() => setOpen(false)}
           >
+            <Image
+              src="/images/logo-j.png"
+              alt=""
+              width={358}
+              height={363}
+              priority
+              className="h-11 w-auto md:h-12"
+            />
             <span className="flex flex-col leading-none">
               <span
                 className={`font-display text-xl font-semibold tracking-wide transition-colors duration-300 md:text-2xl ${
                   inkNav ? "text-ink" : "text-warm-white"
                 }`}
               >
-                Javies
+                avies
               </span>
               <span
                 className={`mt-0.5 font-sans text-[9px] uppercase tracking-[0.22em] ${
