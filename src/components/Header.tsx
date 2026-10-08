@@ -1,12 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, Instagram } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { navLinks, siteConfig } from "@/lib/site-data";
+import { Logo } from "@/components/Logo";
 
 export function Header() {
   const pathname = usePathname();
@@ -60,33 +60,10 @@ export function Header() {
           <Link
             href="/"
             aria-label="Javies Photography Studios"
-            className="group relative z-10 flex items-center gap-1.5"
+            className="group relative z-10"
             onClick={() => setOpen(false)}
           >
-            <Image
-              src="/images/logo-j.png"
-              alt=""
-              width={358}
-              height={363}
-              priority
-              className="h-11 w-auto md:h-12"
-            />
-            <span className="flex flex-col leading-none">
-              <span
-                className={`font-display text-xl font-semibold tracking-wide transition-colors duration-300 md:text-2xl ${
-                  inkNav ? "text-ink" : "text-warm-white"
-                }`}
-              >
-                avies
-              </span>
-              <span
-                className={`mt-0.5 font-sans text-[9px] uppercase tracking-[0.22em] ${
-                  inkNav ? "text-ink-faint" : "text-warm-white/70"
-                }`}
-              >
-                Photography Studios
-              </span>
-            </span>
+            <Logo tone={inkNav ? "ink" : "light"} />
           </Link>
 
           <nav className="hidden items-center gap-8 lg:flex">

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { siteConfig, navLinks } from "@/lib/site-data";
+import { Logo } from "@/components/Logo";
 
 const linkClass =
   "font-sans text-sm text-ink-muted transition-colors hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2";
@@ -13,13 +14,8 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 lg:px-10 lg:py-20">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4 lg:gap-8">
           <div>
-            <Link href="/" className="inline-flex items-center gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2">
-              <span>
-                <span className="block font-display text-3xl font-semibold text-ink">Javies</span>
-                <span className="mt-1 block font-sans text-[11px] uppercase tracking-[0.18em] text-ink-faint">
-                  Photography Studio
-                </span>
-              </span>
+            <Link href="/" aria-label="Javies Photography Studios" className="inline-flex focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2">
+              <Logo />
             </Link>
             <p className="mt-4 font-sans text-sm text-ink">Accra, Ghana</p>
             <a
