@@ -67,14 +67,17 @@ export function Hero() {
                 priority={index === 0}
                 sizes="100vw"
                 quality={92}
-                className="object-contain"
-                style={{ objectFit: "contain", objectPosition: slide.objectPosition }}
+                className="object-cover"
+                style={{ objectFit: "cover", objectPosition: slide.objectPosition }}
               />
             )}
           </motion.div>
         </AnimatePresence>
         {poster ? null : (
-          <div className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-ink/80 to-transparent" />
+          <>
+            <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-ink/80 via-ink/25 to-transparent" />
+            <div className="absolute inset-y-0 left-0 w-[46%] bg-gradient-to-r from-ink/55 to-transparent" />
+          </>
         )}
       </div>
 

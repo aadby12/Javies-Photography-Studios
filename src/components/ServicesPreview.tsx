@@ -5,7 +5,6 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { services } from "@/lib/site-data";
-import { SectionHeading } from "@/components/SectionHeading";
 
 type ServicesPreviewProps = {
   fullPage?: boolean;
@@ -14,27 +13,44 @@ type ServicesPreviewProps = {
 export function ServicesPreview({ fullPage = false }: ServicesPreviewProps) {
   const items = fullPage ? services : services.slice(0, 5);
 
+  if (!fullPage) {
+    return (
+      <section id="services-preview" className="scroll-mt-20 bg-warm-white py-20 md:py-28 lg:py-32">
+        <div className="mx-auto grid max-w-7xl items-end gap-10 px-5 md:px-8 lg:grid-cols-[minmax(0,1.5fr)_minmax(16rem,0.7fr)] lg:gap-16 lg:px-10">
+          <div>
+            <p className="font-sans text-[11px] font-medium uppercase tracking-[0.24em] text-accent-deep">
+              Services
+            </p>
+            <h2 className="mt-4 font-display text-[clamp(2.75rem,6.5vw,5.25rem)] font-medium leading-[0.92] tracking-[-0.03em] text-ink">
+              Maternity.
+              <br />
+              Newborn.
+              <br />
+              Milestone.
+            </h2>
+            <p className="mt-6 max-w-xl font-sans text-lg font-light leading-relaxed text-ink-muted md:text-xl">
+              Family, portraits, traditional wear, and Christmas — photographed in the studio in Accra.
+            </p>
+          </div>
+          <Link
+            href="/services"
+            className="inline-flex w-fit items-center gap-2 rounded-sm bg-ink px-7 py-3.5 font-sans text-[12px] font-semibold uppercase tracking-[0.14em] text-warm-white transition-colors hover:bg-ink-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 active:translate-y-px"
+          >
+            View packages
+            <ArrowRight size={14} />
+          </Link>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section
       id={fullPage ? undefined : "services-preview"}
       className={`scroll-mt-20 bg-warm-white ${fullPage ? "pb-20 md:pb-28" : "py-20 md:py-28 lg:py-32"}`}
     >
       <div className="mx-auto max-w-7xl px-5 md:px-8 lg:px-10">
-        {!fullPage && (
-          <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-            <SectionHeading eyebrow="Services" title="What we photograph" />
-            <Link
-              href="/services"
-              className="shrink-0 font-sans text-[12px] font-semibold uppercase tracking-[0.14em] text-ink transition-colors hover:text-accent-deep"
-            >
-              View Packages
-            </Link>
-          </div>
-        )}
-
-        <div
-          className={`grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6 ${fullPage ? "" : "mt-14"}`}
-        >
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
           {items.map((service, index) => (
             <motion.article
               key={service.id}
