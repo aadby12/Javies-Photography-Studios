@@ -452,10 +452,10 @@ export const aboutContent = {
   title: "About Javies",
   lead: "Javies Photography Studio is based in Accra, Ghana — creating portraits for families, maternity, newborns, milestones, and traditional sessions.",
   location: "C&G House, Dome Road, Westlands, Accra",
-  image: "/images/about-studio.jpg",
-  imageAlt: "Traditional studio portrait by Javies Photography Studio",
-  width: 1920,
-  height: 2400,
+  image: "/images/about-studio-session.jpg",
+  imageAlt: "Behind the scenes of a Javies Photography Studio session",
+  width: 946,
+  height: 1662,
 };
 
 export const heroSlides = [

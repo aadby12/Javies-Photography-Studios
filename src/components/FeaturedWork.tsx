@@ -64,10 +64,10 @@ export function FeaturedWork() {
           className="group relative block overflow-hidden rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
         >
           <Image
-            src="/images/hero/prints.jpg"
+            src="/images/about-studio-session.jpg"
             alt=""
-            width={2000}
-            height={1334}
+            width={946}
+            height={1662}
             sizes="(min-width: 1280px) 1160px, 100vw"
             quality={92}
             className="h-auto w-full"

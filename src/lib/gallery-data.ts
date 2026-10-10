@@ -208,9 +208,9 @@ export const galleryItems: GalleryItem[] = [
   {
     "id": "1e9cedd5b58f",
     "src": "/images/gallery/milestone-244a9875-7c6a7c.jpg",
-    "alt": "milestone photography by Javies Photography Studio",
-    "caption": "Milestone",
-    "category": "milestone",
+    "alt": "Portrait in a burgundy gown by Javies Photography Studio",
+    "caption": "Portrait",
+    "category": "portrait",
     "width": 1896,
     "height": 2400,
     "ratio": 0.79,
