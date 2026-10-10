@@ -464,7 +464,7 @@ export const heroSlides = [
   },
   {
     id: "maternity",
-    src: "/images/hero/maternity-gown.jpg",
+    src: "/images/hero/maternity-gown-full.jpg",
     alt: "Maternity portrait in a pale blue gown by Javies Photography Studio",
     objectPosition: "center center",
   },
