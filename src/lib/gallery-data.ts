@@ -4,6 +4,7 @@ export type GalleryCategory =
   | "maternity"
   | "newborn"
   | "milestone"
+  | "cake"
   | "family"
   | "event"
   | "christmas"
@@ -29,6 +30,10 @@ export const galleryCategories: { id: GalleryCategory; label: string }[] = [
   {
     "id": "milestone",
     "label": "Milestone"
+  },
+  {
+    "id": "cake",
+    "label": "Cake Smash"
   },
   {
     "id": "family",
@@ -57,6 +62,17 @@ export const galleryCategories: { id: GalleryCategory; label: string }[] = [
 ];
 
 export const galleryItems: GalleryItem[] = [
+  {
+    "id": "eaec8786ce5a",
+    "src": "/images/gallery/cake-aseda@1-(15)-eaec87.jpg",
+    "alt": "First birthday cake smash session by Javies Photography Studio",
+    "caption": "Cake Smash",
+    "category": "cake",
+    "width": 1920,
+    "height": 2400,
+    "ratio": 0.8,
+    "includeInAll": false
+  },
   {
     "id": "0322e0738f22",
     "src": "/images/gallery/milestone-_c7a1218-0322e0.jpg",
@@ -368,9 +384,9 @@ export const galleryItems: GalleryItem[] = [
   {
     "id": "15ca779c74c8",
     "src": "/images/gallery/milestone-audrey@1-(39)-df4cb4.jpg",
-    "alt": "milestone photography by Javies Photography Studio",
-    "caption": "Milestone",
-    "category": "milestone",
+    "alt": "First birthday cake by Javies Photography Studio",
+    "caption": "Cake Smash",
+    "category": "cake",
     "width": 1920,
     "height": 2400,
     "ratio": 0.8,
@@ -632,9 +648,9 @@ export const galleryItems: GalleryItem[] = [
   {
     "id": "67bdc6daff72",
     "src": "/images/gallery/milestone-janiece@1-(21)-67bdc6.jpg",
-    "alt": "milestone photography by Javies Photography Studio",
-    "caption": "Milestone",
-    "category": "milestone",
+    "alt": "Cake smash session by Javies Photography Studio",
+    "caption": "Cake Smash",
+    "category": "cake",
     "width": 1920,
     "height": 2400,
     "ratio": 0.8,
@@ -1204,9 +1220,9 @@ export const galleryItems: GalleryItem[] = [
   {
     "id": "a1c95687bc45",
     "src": "/images/gallery/milestone-sillington@1-(9)-a1c956.jpg",
-    "alt": "milestone photography by Javies Photography Studio",
-    "caption": "Milestone",
-    "category": "milestone",
+    "alt": "Cake smash session by Javies Photography Studio",
+    "caption": "Cake Smash",
+    "category": "cake",
     "width": 1920,
     "height": 2400,
     "ratio": 0.8,
