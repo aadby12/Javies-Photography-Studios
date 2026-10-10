@@ -59,6 +59,29 @@ export function FeaturedWork() {
             />
           </Link>
         ))}
+        <Link
+          href="/gallery"
+          className="group relative block overflow-hidden rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
+        >
+          <Image
+            src="/images/hero/prints.jpg"
+            alt=""
+            width={2000}
+            height={1334}
+            sizes="(min-width: 1280px) 1160px, 100vw"
+            quality={92}
+            className="h-auto w-full"
+          />
+          <span className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 bg-gradient-to-t from-ink/80 via-ink/40 to-transparent px-5 pb-5 pt-16 text-warm-white md:px-8 md:pb-7">
+            <span className="font-display text-3xl font-medium leading-none tracking-[-0.03em] md:text-4xl">
+              View the gallery
+            </span>
+            <ArrowRight
+              size={26}
+              className="mb-1 shrink-0 transition-transform duration-300 group-hover:translate-x-1.5 motion-reduce:transition-none"
+            />
+          </span>
+        </Link>
       </div>
     </section>
   );

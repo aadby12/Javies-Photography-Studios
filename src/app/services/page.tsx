@@ -13,7 +13,7 @@ export default function ServicesPage() {
   return (
     <>
       <PageHero eyebrow="Services" title="Services & packages" />
-      <ServicesPreview fullPage />
+      <ServicesPreview />
       <Packages />
     </>
   );

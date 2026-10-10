@@ -7,6 +7,7 @@ const ALLOWED_SERVICES = new Set([
   "Maternity",
   "Newborn",
   "Milestone",
+  "Cake Smash",
   "Family",
   "Events",
   "Traditional",

@@ -11,7 +11,7 @@ export function Packages() {
         <p className="mb-3 font-sans text-[11px] font-medium uppercase tracking-[0.24em] text-accent-deep">
           2026 rates
         </p>
-        <h2 className="font-display text-display-md font-medium text-ink">Sessions & packages</h2>
+        <h2 className="font-display text-display-md font-medium text-ink">Sessions & Packages</h2>
         <p className="mt-3 max-w-xl font-sans text-sm text-ink-muted">
           Prices are in Ghana cedis. Maternity and Christmas sessions are quoted when you enquire.
         </p>
@@ -53,7 +53,7 @@ export function Packages() {
         </div>
 
         <div className="mt-16">
-          <h3 className="font-display text-3xl text-ink">Canvas frames</h3>
+          <h3 className="font-display text-3xl text-ink">Canvas Frames</h3>
           <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
             {rateCard.frames.map((frame) => (
               <div
