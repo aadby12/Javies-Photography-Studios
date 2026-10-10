@@ -35,7 +35,7 @@ function bookingMessage(form: BookingPayload) {
     `Service: ${form.service}`,
     `Preferred date: ${form.preferredDate || "Not set"}`,
     `Preferred time: ${form.preferredTime || "Not set"}`,
-    `Message: ${form.message || "—"}`,
+    `Comments: ${form.message || "—"}`,
   ].join("\n");
 }
 
@@ -341,7 +341,7 @@ export function BookingExperience() {
                       />
                     </div>
                     <div className="sm:col-span-2">
-                      <FieldLabel htmlFor="booking-message">Message</FieldLabel>
+                      <FieldLabel htmlFor="booking-message">Comments</FieldLabel>
                       <textarea
                         {...fieldProps("message")}
                         rows={4}

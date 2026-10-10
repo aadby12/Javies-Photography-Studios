@@ -126,7 +126,7 @@ export async function POST(request: Request) {
           <tr><td style="padding: 8px 0; color: #8a8178;">Photography Service</td><td style="padding: 8px 0;">${escapeHtml(service)}</td></tr>
           <tr><td style="padding: 8px 0; color: #8a8178;">Preferred Date</td><td style="padding: 8px 0;">${escapeHtml(preferredDate || "—")}</td></tr>
           <tr><td style="padding: 8px 0; color: #8a8178;">Preferred Time</td><td style="padding: 8px 0;">${escapeHtml(preferredTime || "—")}</td></tr>
-          <tr><td style="padding: 8px 0; color: #8a8178; vertical-align: top;">Message</td><td style="padding: 8px 0; white-space: pre-wrap;">${escapeHtml(message || "—")}</td></tr>
+          <tr><td style="padding: 8px 0; color: #8a8178; vertical-align: top;">Comments</td><td style="padding: 8px 0; white-space: pre-wrap;">${escapeHtml(message || "—")}</td></tr>
         </table>
       </div>
     `;
