@@ -42,6 +42,7 @@ export type ServiceId =
   | "cake"
   | "family"
   | "events"
+  | "product"
   | "portrait"
   | "christmas";
 
@@ -103,10 +104,19 @@ export const services: {
     id: "events",
     title: "Events",
     description: "Naming ceremonies and kids’ birthday parties.",
-    image: "/images/service-events.jpg",
-    imageAlt: "Child at a Javies Kids event by Javies Photography Studio",
-    width: 819,
-    height: 1024,
+    image: "/images/service-events-party.jpg",
+    imageAlt: "Kids’ birthday party photographed by Javies Photography Studio",
+    width: 2000,
+    height: 1405,
+  },
+  {
+    id: "product",
+    title: "Product Shoots",
+    description: "Studio product and brand photography.",
+    image: "/images/service-product-kit.jpg",
+    imageAlt: "Product studio shoot by Javies Photography Studio",
+    width: 2000,
+    height: 2500,
   },
   {
     id: "portrait",
@@ -444,6 +454,7 @@ export const bookingServices = [
   { id: "cake", label: "Cake Smash" },
   { id: "family", label: "Family" },
   { id: "events", label: "Events" },
+  { id: "product", label: "Product Shoots" },
   { id: "portrait", label: "Portrait" },
   { id: "christmas", label: "Christmas" },
 ] as const;

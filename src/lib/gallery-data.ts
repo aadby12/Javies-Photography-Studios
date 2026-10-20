@@ -7,6 +7,7 @@ export type GalleryCategory =
   | "cake"
   | "family"
   | "event"
+  | "product"
   | "christmas"
   | "portrait";
 
@@ -23,42 +24,16 @@ export type GalleryItem = {
 };
 
 export const galleryCategories: { id: GalleryCategory; label: string }[] = [
-  {
-    "id": "all",
-    "label": "All"
-  },
-  {
-    "id": "milestone",
-    "label": "Milestone"
-  },
-  {
-    "id": "cake",
-    "label": "Cake Smash"
-  },
-  {
-    "id": "family",
-    "label": "Family"
-  },
-  {
-    "id": "newborn",
-    "label": "Newborn"
-  },
-  {
-    "id": "maternity",
-    "label": "Maternity"
-  },
-  {
-    "id": "portrait",
-    "label": "Portrait"
-  },
-  {
-    "id": "event",
-    "label": "Event"
-  },
-  {
-    "id": "christmas",
-    "label": "Christmas"
-  }
+  { "id": "all", "label": "All" },
+  { "id": "milestone", "label": "Milestone" },
+  { "id": "cake", "label": "Cake Smash" },
+  { "id": "family", "label": "Family" },
+  { "id": "newborn", "label": "Newborn" },
+  { "id": "maternity", "label": "Maternity" },
+  { "id": "portrait", "label": "Portrait" },
+  { "id": "event", "label": "Event" },
+  { "id": "product", "label": "Product Shoots" },
+  { "id": "christmas", "label": "Christmas" }
 ];
 
 export const galleryItems: GalleryItem[] = [
@@ -2261,5 +2236,302 @@ export const galleryItems: GalleryItem[] = [
     "height": 1497,
     "ratio": 1.336,
     "includeInAll": true
+  },
+  {
+    "id": "b1c630a15c0c",
+    "src": "/images/gallery/event-javi0160-b1c630.jpg",
+    "alt": "Event photography by Javies Photography Studio",
+    "caption": "Event",
+    "category": "event",
+    "width": 2400,
+    "height": 1600,
+    "ratio": 1.5,
+    "includeInAll": true
+  },
+  {
+    "id": "6bc899d13be3",
+    "src": "/images/gallery/event-3c7a9541-6bc899.jpg",
+    "alt": "Event photography by Javies Photography Studio",
+    "caption": "Event",
+    "category": "event",
+    "width": 2400,
+    "height": 3000,
+    "ratio": 0.8,
+    "includeInAll": true
+  },
+  {
+    "id": "1e028d4fa8c2",
+    "src": "/images/gallery/event-3c7a9663-1e028d.jpg",
+    "alt": "Event photography by Javies Photography Studio",
+    "caption": "Event",
+    "category": "event",
+    "width": 2400,
+    "height": 1600,
+    "ratio": 1.5,
+    "includeInAll": true
+  },
+  {
+    "id": "a10af17281f4",
+    "src": "/images/gallery/event-3c7a9591-a10af1.jpg",
+    "alt": "Event photography by Javies Photography Studio",
+    "caption": "Event",
+    "category": "event",
+    "width": 2400,
+    "height": 1600,
+    "ratio": 1.5,
+    "includeInAll": true
+  },
+  {
+    "id": "bcaace498bdf",
+    "src": "/images/gallery/event-3c7a9491-bcaace.jpg",
+    "alt": "Event photography by Javies Photography Studio",
+    "caption": "Event",
+    "category": "event",
+    "width": 2400,
+    "height": 1600,
+    "ratio": 1.5,
+    "includeInAll": true
+  },
+  {
+    "id": "1a0bf61368cb",
+    "src": "/images/gallery/event-3c7a9949-1a0bf6.jpg",
+    "alt": "Event photography by Javies Photography Studio",
+    "caption": "Event",
+    "category": "event",
+    "width": 2400,
+    "height": 1600,
+    "ratio": 1.5,
+    "includeInAll": true
+  },
+  {
+    "id": "29869b97d209",
+    "src": "/images/gallery/event-3c7a9483-29869b.jpg",
+    "alt": "Event photography by Javies Photography Studio",
+    "caption": "Event",
+    "category": "event",
+    "width": 2400,
+    "height": 1600,
+    "ratio": 1.5,
+    "includeInAll": true
+  },
+  {
+    "id": "104fab4a04d5",
+    "src": "/images/gallery/event-1e8a0018-104fab.jpg",
+    "alt": "Event photography by Javies Photography Studio",
+    "caption": "Event",
+    "category": "event",
+    "width": 2000,
+    "height": 1600,
+    "ratio": 1.25,
+    "includeInAll": true
+  },
+  {
+    "id": "1dd39d92ebb7",
+    "src": "/images/gallery/event-_r4a3130-1dd39d.jpg",
+    "alt": "Event photography by Javies Photography Studio",
+    "caption": "Event",
+    "category": "event",
+    "width": 2000,
+    "height": 1600,
+    "ratio": 1.25,
+    "includeInAll": true
+  },
+  {
+    "id": "70d251d8b1e6",
+    "src": "/images/gallery/event-javi3848-70d251.jpg",
+    "alt": "Event photography by Javies Photography Studio",
+    "caption": "Event",
+    "category": "event",
+    "width": 2000,
+    "height": 1505,
+    "ratio": 1.3289,
+    "includeInAll": true
+  },
+  {
+    "id": "3313b18a4b3a",
+    "src": "/images/gallery/event-jpsi9608-3313b1.jpg",
+    "alt": "Event photography by Javies Photography Studio",
+    "caption": "Event",
+    "category": "event",
+    "width": 2000,
+    "height": 1505,
+    "ratio": 1.3289,
+    "includeInAll": true
+  },
+  {
+    "id": "fee2fe88f8d5",
+    "src": "/images/gallery/event-img_0687-fee2fe.jpg",
+    "alt": "Event photography by Javies Photography Studio",
+    "caption": "Event",
+    "category": "event",
+    "width": 2000,
+    "height": 1503,
+    "ratio": 1.3307,
+    "includeInAll": true
+  },
+  {
+    "id": "d6e750a0a217",
+    "src": "/images/gallery/event-img_0811-d6e750.jpg",
+    "alt": "Event photography by Javies Photography Studio",
+    "caption": "Event",
+    "category": "event",
+    "width": 2000,
+    "height": 1503,
+    "ratio": 1.3307,
+    "includeInAll": true
+  },
+  {
+    "id": "279023e25151",
+    "src": "/images/gallery/event-img_7934-279023.jpg",
+    "alt": "Event photography by Javies Photography Studio",
+    "caption": "Event",
+    "category": "event",
+    "width": 2000,
+    "height": 1503,
+    "ratio": 1.3307,
+    "includeInAll": true
+  },
+  {
+    "id": "77336c667916",
+    "src": "/images/gallery/event-_mg_0374-77336c.jpg",
+    "alt": "Event photography by Javies Photography Studio",
+    "caption": "Event",
+    "category": "event",
+    "width": 2000,
+    "height": 1503,
+    "ratio": 1.3307,
+    "includeInAll": true
+  },
+  {
+    "id": "7dab8948769d",
+    "src": "/images/gallery/event-_mg_0604-7dab89.jpg",
+    "alt": "Event photography by Javies Photography Studio",
+    "caption": "Event",
+    "category": "event",
+    "width": 2000,
+    "height": 1502,
+    "ratio": 1.3316,
+    "includeInAll": true
+  },
+  {
+    "id": "c31a165941c2",
+    "src": "/images/gallery/event-javi3883-c31a16.jpg",
+    "alt": "Event photography by Javies Photography Studio",
+    "caption": "Event",
+    "category": "event",
+    "width": 2000,
+    "height": 1481,
+    "ratio": 1.3504,
+    "includeInAll": true
+  },
+  {
+    "id": "91f5e7545db6",
+    "src": "/images/gallery/event-img_8142-91f5e7.jpg",
+    "alt": "Event photography by Javies Photography Studio",
+    "caption": "Event",
+    "category": "event",
+    "width": 2000,
+    "height": 1405,
+    "ratio": 1.4235,
+    "includeInAll": true
+  },
+  {
+    "id": "1da6df24bfb8",
+    "src": "/images/gallery/event-jpsi9423-1da6df.jpg",
+    "alt": "Event photography by Javies Photography Studio",
+    "caption": "Event",
+    "category": "event",
+    "width": 2000,
+    "height": 1334,
+    "ratio": 1.4993,
+    "includeInAll": true
+  },
+  {
+    "id": "88df71e9253d",
+    "src": "/images/gallery/event-javi0047-88df71.jpg",
+    "alt": "Event photography by Javies Photography Studio",
+    "caption": "Event",
+    "category": "event",
+    "width": 2000,
+    "height": 1333,
+    "ratio": 1.5004,
+    "includeInAll": true
+  },
+  {
+    "id": "98f1ee00890a",
+    "src": "/images/gallery/event-javi0165-98f1ee.jpg",
+    "alt": "Event photography by Javies Photography Studio",
+    "caption": "Event",
+    "category": "event",
+    "width": 2000,
+    "height": 1333,
+    "ratio": 1.5004,
+    "includeInAll": true
+  },
+  {
+    "id": "a57ed7b22c19",
+    "src": "/images/gallery/event-jpsi9414-a57ed7.jpg",
+    "alt": "Event photography by Javies Photography Studio",
+    "caption": "Event",
+    "category": "event",
+    "width": 2000,
+    "height": 1333,
+    "ratio": 1.5004,
+    "includeInAll": true
+  },
+  {
+    "id": "1c5d5ce15d28",
+    "src": "/images/gallery/event-jpsi9606-1c5d5c.jpg",
+    "alt": "Event photography by Javies Photography Studio",
+    "caption": "Event",
+    "category": "event",
+    "width": 2000,
+    "height": 1333,
+    "ratio": 1.5004,
+    "includeInAll": true
+  },
+  {
+    "id": "d31fa83ee153",
+    "src": "/images/gallery/event-_u0a6609-d31fa8.jpg",
+    "alt": "Event photography by Javies Photography Studio",
+    "caption": "Event",
+    "category": "event",
+    "width": 2000,
+    "height": 1333,
+    "ratio": 1.5004,
+    "includeInAll": true
+  },
+  {
+    "id": "c201be48e995",
+    "src": "/images/gallery/product-244a9643-c201be.jpg",
+    "alt": "Product Shoots photography by Javies Photography Studio",
+    "caption": "Product Shoots",
+    "category": "product",
+    "width": 2000,
+    "height": 2500,
+    "ratio": 0.8,
+    "includeInAll": false
+  },
+  {
+    "id": "32ee57df5018",
+    "src": "/images/gallery/product-244a9724-32ee57.jpg",
+    "alt": "Product Shoots photography by Javies Photography Studio",
+    "caption": "Product Shoots",
+    "category": "product",
+    "width": 2000,
+    "height": 2500,
+    "ratio": 0.8,
+    "includeInAll": true
+  },
+  {
+    "id": "c2bf786b63b7",
+    "src": "/images/gallery/product-244a9742-c2bf78.jpg",
+    "alt": "Product Shoots photography by Javies Photography Studio",
+    "caption": "Product Shoots",
+    "category": "product",
+    "width": 2000,
+    "height": 1333,
+    "ratio": 1.5004,
+    "includeInAll": false
   }
 ];

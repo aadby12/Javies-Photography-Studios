@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { rateCard } from "@/lib/site-data";
@@ -13,7 +14,7 @@ export function Packages() {
         </p>
         <h2 className="font-display text-display-md font-medium text-ink">Sessions & Packages</h2>
         <p className="mt-3 max-w-xl font-sans text-sm text-ink-muted">
-          Prices are in Ghana cedis. Maternity and Christmas sessions are quoted when you enquire.
+          Prices are in Ghana cedis. Maternity, Christmas, and Product Shoots are quoted when you enquire.
         </p>
 
         <div className="mt-14 space-y-16">
@@ -54,7 +55,34 @@ export function Packages() {
 
         <div className="mt-16">
           <h3 className="font-display text-3xl text-ink">Canvas Frames</h3>
-          <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+          <p className="mt-2 max-w-xl font-sans text-sm text-ink-muted">
+            Finished prints and canvas frames from your session.
+          </p>
+          <div className="mt-8 grid items-start gap-5 lg:grid-cols-2">
+            <figure className="overflow-hidden rounded-sm bg-warm-white">
+              <Image
+                src="/images/frames-cake.jpg"
+                alt="Cake smash birthday cake photographed by Javies Photography Studio"
+                width={2000}
+                height={2662}
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                quality={92}
+                className="h-auto w-full"
+              />
+            </figure>
+            <figure className="overflow-hidden rounded-sm bg-warm-white">
+              <Image
+                src="/images/frames-wall.jpg"
+                alt="Canvas frames displayed on a studio wall by Javies Photography Studio"
+                width={2000}
+                height={1380}
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                quality={92}
+                className="h-auto w-full"
+              />
+            </figure>
+          </div>
+          <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
             {rateCard.frames.map((frame) => (
               <div
                 key={frame.size}

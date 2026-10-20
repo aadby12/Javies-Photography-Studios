@@ -10,6 +10,7 @@ const ALLOWED_SERVICES = new Set([
   "Cake Smash",
   "Family",
   "Events",
+  "Product Shoots",
   "Traditional",
   "Portrait",
   "Christmas",
