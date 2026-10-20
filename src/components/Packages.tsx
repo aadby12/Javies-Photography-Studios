@@ -58,30 +58,17 @@ export function Packages() {
           <p className="mt-2 max-w-xl font-sans text-sm text-ink-muted">
             Finished prints and canvas frames from your session.
           </p>
-          <div className="mt-8 grid items-start gap-5 lg:grid-cols-2">
-            <figure className="overflow-hidden rounded-sm bg-warm-white">
-              <Image
-                src="/images/frames-cake.jpg"
-                alt="Cake smash birthday cake photographed by Javies Photography Studio"
-                width={2000}
-                height={2662}
-                sizes="(min-width: 1024px) 50vw, 100vw"
-                quality={92}
-                className="h-auto w-full"
-              />
-            </figure>
-            <figure className="overflow-hidden rounded-sm bg-warm-white">
-              <Image
-                src="/images/frames-wall.jpg"
-                alt="Canvas frames displayed on a studio wall by Javies Photography Studio"
-                width={2000}
-                height={1380}
-                sizes="(min-width: 1024px) 50vw, 100vw"
-                quality={92}
-                className="h-auto w-full"
-              />
-            </figure>
-          </div>
+          <figure className="mt-8 overflow-hidden rounded-sm bg-warm-white">
+            <Image
+              src="/images/frames-wall.jpg"
+              alt="Canvas frames displayed on a studio wall by Javies Photography Studio"
+              width={2000}
+              height={1380}
+              sizes="(min-width: 1280px) 1160px, 100vw"
+              quality={92}
+              className="h-auto w-full"
+            />
+          </figure>
           <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
             {rateCard.frames.map((frame) => (
               <div

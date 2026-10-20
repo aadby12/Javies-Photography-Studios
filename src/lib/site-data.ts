@@ -86,10 +86,10 @@ export const services: {
     id: "cake",
     title: "Cake Smash",
     description: "Studio cake smash sessions.",
-    image: "/images/service-cake-aseda.jpg",
-    imageAlt: "First birthday cake smash session by Javies Photography Studio",
+    image: "/images/service-cake-paw.jpg",
+    imageAlt: "Paw Patrol cake smash birthday cake by Javies Photography Studio",
     width: 2000,
-    height: 2500,
+    height: 2662,
   },
   {
     id: "family",
